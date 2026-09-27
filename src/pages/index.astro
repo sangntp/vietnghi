@@ -12,12 +12,29 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- 1. VỀ VIỆT NGHI (Khớp với link #ve-viet-nghi) -->
+  <!-- THANH CHUYỂN ĐỔI PHONG CÁCH SEGMENTED PILL SANG TRỌNG (CỐ ĐỊNH TRÊN ĐẦU) -->
+  <div class="sticky top-16 z-30 flex justify-center py-3 bg-[#FAF8F5]/90 dark:bg-[#0F1412]/90 backdrop-blur-md border-b border-stone-200 dark:border-stone-800">
+    <div class="inline-flex p-1.5 bg-stone-200/80 dark:bg-stone-800/80 rounded-full border border-stone-300 dark:border-stone-700 shadow-inner">
+      <!-- Nấc 1: Đang kích hoạt (Khởi Duyên) -->
+      <span class="px-5 py-1.5 rounded-full text-xs font-bold bg-[#1B4D3E] text-white shadow-md flex items-center gap-1.5 cursor-default">
+        🌿 Khởi Duyên (Người Trẻ)
+      </span>
+      <!-- Nấc 2: Nút bấm chuyển sang Chân Truyền -->
+      <a
+        href="/chan-truyen"
+        class="px-5 py-1.5 rounded-full text-xs font-medium text-stone-600 dark:text-stone-300 hover:text-stone-900 dark:hover:text-white hover:bg-stone-300/50 transition-all flex items-center gap-1.5"
+      >
+        ☯ Chân Truyền (Lề Lối)
+      </a>
+    </div>
+  </div>
+
+  <!-- 1. HERO -->
   <div id="ve-viet-nghi">
     <Hero
       actions={[
         { variant: 'primary', text: 'Nhận Tư Vấn Chọn Ni Tay', href: 'https://zalo.me', target: '_blank', icon: 'tabler:message-circle' },
-        { text: 'Khám Phá Tam Phẩm', href: '#ngoc-cam-thach' }
+        { text: 'Khám Phá Tam Phẩm', href: '#tam-pham' }
       ]}
     >
       <Fragment slot="title">
@@ -30,8 +47,8 @@ const metadata = {
     </Hero>
   </div>
 
-  <!-- 2. TAM PHẨM (Gắn ID cho từng sản phẩm) -->
-  <div id="ngoc-cam-thach">
+  <!-- 2. TAM PHẨM (Khớp ID cuộn trang) -->
+  <div id="tam-pham">
     <Features
       tagline="Nếp Sống Tỉnh Thức"
       title="Năng Lượng Thuần Khiết & Bàn Tay Thủ Công"
@@ -43,7 +60,7 @@ const metadata = {
     />
   </div>
 
-  <!-- 3. ĐO NI TAY (Khớp với link #do-ni-tay) -->
+  <!-- 3. ĐO NI TAY (Khớp ID cuộn trang) -->
   <div id="do-ni-tay">
     <Steps
       title="30 giây để tìm chiếc vòng ngọc vừa vặn"
