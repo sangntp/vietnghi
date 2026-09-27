@@ -12,7 +12,7 @@ import '@fontsource-variable/inter';
     --aw-font-serif: var(--aw-font-sans);
     --aw-font-heading: var(--aw-font-sans);
 
-    /* Màu sắc Việt Nghi: Xanh ngọc bích & Nhũ vàng cổ */
+    /* Màu sắc thương hiệu Việt Nghi: Xanh ngọc bích & Nhũ vàng cổ */
     --aw-color-primary: rgb(46 111 94);
     --aw-color-secondary: rgb(212 175 55);
     --aw-color-accent: rgb(180 83 9);
@@ -54,11 +54,9 @@ import '@fontsource-variable/inter';
     localStorage.setItem('vietnghi_nav_theme', themeKey);
     const data = THEMES[themeKey];
     
-    // Cập nhật nhãn nút công tắc
     const btn = document.getElementById('vn-theme-switcher');
     if (btn) btn.innerText = data.btn;
 
-    // Cập nhật các mục menu chính
     const mainItems = document.querySelectorAll('header nav > ul > li > a, header nav > ul > li > button');
     mainItems.forEach((el, index) => {
       if (data.menu[index]) {
@@ -68,21 +66,17 @@ import '@fontsource-variable/inter';
       }
     });
 
-    // Cập nhật menu thả xuống (Tam Phẩm)
     const subItems = document.querySelectorAll('header nav ul ul li a');
     subItems.forEach((el, index) => {
       if (data.dropdown[index]) el.textContent = data.dropdown[index];
     });
 
-    // Cập nhật nút kêu gọi hành động (Thỉnh Duyên / Trò Chuyện)
     const ctaBtn = document.querySelector('header a.btn-primary, header .actions a');
     if (ctaBtn) ctaBtn.textContent = data.cta;
   }
 
   function setupSwitcherButton() {
     let currentTheme = localStorage.getItem('vietnghi_nav_theme') || 't1';
-    
-    // Tìm vị trí cạnh nút Chế độ sáng/tối
     const darkToggle = document.querySelector('[data-aw-toggle-color-scheme]') || document.querySelector('header .actions');
     
     if (darkToggle && !document.getElementById('vn-theme-switcher')) {
@@ -95,86 +89,16 @@ import '@fontsource-variable/inter';
         currentTheme = currentTheme === 't1' ? 't2' : 't1';
         updateNavbar(currentTheme);
       };
-      
-      // Chèn nút vào ngay trước nút Sáng/Tối
       darkToggle.parentNode.insertBefore(btn, darkToggle);
     }
 
     updateNavbar(currentTheme);
   }
 
-  // Khởi chạy khi trang sẵn sàng
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', setupSwitcherButton);
   } else {
     setupSwitcherButton();
   }
   document.addEventListener('astro:page-load', setupSwitcherButton);
-</script>
-
-<script is:inline>
-  const NAV_THEMES = {
-    theme1: {
-      btn: '☯ Tinh Hoa',
-      links: ['Khởi Duyên', 'Tam Phẩm', 'Góc Kể Chuyện', 'Minh Bạch Giám Định'],
-      dropdown: ['Khăn Chầu Áo Ngự', 'Pháp Phục Thiền Tịnh', 'Ngọc Cẩm Thạch Loại A'],
-      cta: 'Thỉnh Duyên'
-    },
-    theme2: {
-      btn: '☯ Cổ Phong',
-      links: ['Diện Kiến', 'Tác Phẩm', 'Điển Tích & Ngọc Học', 'Chỉ Dẫn Đo Ni'],
-      dropdown: ['Y Phục Nghi Lễ', 'Trang Phục Thường Nhật', 'Ngọc Phỉ Thúy Loại A'],
-      cta: 'Trò Chuyện'
-    }
-  };
-
-  function switchNavTheme(key) {
-    localStorage.setItem('vn_theme', key);
-    const data = NAV_THEMES[key];
-    const btn = document.getElementById('btn-nav-toggle');
-    if (btn) btn.innerText = data.btn;
-
-    const mainLinks = document.querySelectorAll('header nav > ul > li > a, header nav > ul > li > button');
-    data.links.forEach((text, i) => {
-      if (mainLinks[i]) mainLinks[i].childNodes[0].textContent = text + ' ';
-    });
-
-    const subLinks = document.querySelectorAll('header nav ul ul li a');
-    data.dropdown.forEach((text, i) => {
-      if (subLinks[i]) subLinks[i].textContent = text;
-    });
-
-    const cta = document.querySelector('header a.btn-primary,Hoàn toàn làm được, thưa Thầy!
-
-Thầy mở file **`src/components/CustomStyles.astro`** trên GitHub, cuộn xuống dưới cùng và dán đoạn mã ngắn này:
-
-```html
-<script is:inline>
-  const T = {
-    t1: { b: '☯ Tinh Hoa', m: ['Khởi Duyên', 'Tam Phẩm', 'Góc Kể Chuyện', 'Minh Bạch Giám Định'], d: ['Khăn Chầu Áo Ngự', 'Pháp Phục Thiền Tịnh', 'Ngọc Cẩm Thạch Loại A'], c: 'Thỉnh Duyên' },
-    t2: { b: '☯ Cổ Phong', m: ['Diện Kiến', 'Tác Phẩm', 'Điển Tích & Ngọc Học', 'Chỉ Dẫn Đo Ni'], d: ['Y Phục Nghi Lễ', 'Trang Phục Thường Nhật', 'Ngọc Phỉ Thúy Loại A'], c: 'Trò Chuyện' }
-  };
-  function applyT(k) {
-    localStorage.setItem('vn_nav', k);
-    const d = T[k], b = document.getElementById('vn-btn');
-    if (b) b.innerText = d.b;
-    document.querySelectorAll('header nav > ul > li > :is(a,button)').forEach((el, i) => { if (d.m[i]) el.childNodes[0].textContent = d.m[i] + ' '; });
-    document.querySelectorAll('header nav ul ul li a').forEach((el, i) => { if (d.d[i]) el.textContent = d.d[i]; });
-    const cta = document.querySelector('header a.btn-primary, header .actions a');
-    if (cta) cta.textContent = d.c;
-  }
-  function initT() {
-    let k = localStorage.getItem('vn_nav') || 't1';
-    const box = document.querySelector('header .items-center.flex.gap-3, header .actions');
-    if (box && !document.getElementById('vn-btn')) {
-      const btn = document.createElement('button');
-      btn.id = 'vn-btn';
-      btn.className = 'text-xs px-2 py-1 rounded border font-medium mr-1 text-emerald-700 dark:text-emerald-300';
-      btn.onclick = () => { k = k === 't1' ? 't2' : 't1'; applyT(k); };
-      box.prepend(btn);
-    }
-    applyT(k);
-  }
-  document.addEventListener('DOMContentLoaded', initT);
-  document.addEventListener('astro:after-swap', initT);
 </script>
