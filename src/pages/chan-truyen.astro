@@ -11,108 +11,73 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- TOÀN BỘ KHÔNG GIAN ĐỎ GẤM & VÀNG HOÀNG KIM CỦA THIÊN PHỦ -->
-  <div class="bg-[#180404] text-[#F5EBE1] border-b border-[#D4AF37]/30">
+  <!-- NỀN ĐỎ GẤM THIÊN PHỦ XUYÊN SUỐT CẢ TRANG -->
+  <div class="bg-[#2D0404] text-[#F7EFE9] min-h-screen">
     
-    <!-- THANH CHUYỂN KHÔNG GIAN ĐẶC BIỆT DÀNH CHO BẠN ĐỌC -->
-    <div class="bg-[#3D0303] text-center py-2.5 px-4 text-xs tracking-wider border-b border-[#D4AF37]/20 flex justify-center items-center gap-3">
-      <span class="text-[#D4AF37] font-serif">KHO TƯ LIỆU KHẢO CỨU LỀ LỐI ĐẠO MẪU</span>
-      <a href="/" class="bg-[#FBF9F5] text-[#1B4D3E] font-semibold px-3 py-1 rounded-full text-xs hover:bg-white transition shadow">
-        🌿 Chuyển sang giao diện Khởi Duyên (Người Trẻ)
+    <!-- THANH CHUYỂN KHÔNG GIAN DẪN VỀ KHỞI DUYÊN -->
+    <div class="bg-[#1A0202] border-b border-[#D4AF37]/30 text-center py-2 px-4 flex justify-center items-center gap-3">
+      <span class="text-xs text-[#D4AF37] font-serif">KHÔNG GIAN CHÂN TRUYỀN (LỀ LỐI ĐẠO MẪU & NGỌC HỌC)</span>
+      <a href="/" class="bg-[#FAF8F5] text-[#1B4D3E] hover:bg-white px-3 py-1 rounded-full text-xs font-semibold shadow transition">
+        🌿 Về Không Gian Khởi Duyên (Người Trẻ) →
       </a>
     </div>
 
-    <!-- 1. Hero: Nền Đỏ Rượu Trầm & Chữ Vàng Cổ -->
+    <!-- 1. Hero: Đỏ Rượu & Vàng Kim -->
     <Hero
       actions={[
-        {
-          variant: 'primary',
-          text: 'Thỉnh Trang & Thẩm Định',
-          href: 'https://zalo.me',
-          target: '_blank',
-          class: 'bg-[#D4AF37] text-[#180404] hover:bg-[#b8952b] font-bold border-none',
-        },
+        { variant: 'primary', text: 'Thỉnh Trang & Thẩm Định', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[#2D0404] hover:bg-[#C5A059] font-bold border-none' },
       ]}
     >
       <Fragment slot="title">
-        <span class="font-serif text-[#D4AF37]">CHÂN TRUYỀN LỀ LỐI TIỀN NHÂN</span> <br />
-        <span class="text-red-300 font-serif text-3xl sm:text-4xl">Bảo Chứng Ngọc Học Thuần Khiết</span>
+        <span class="text-[#D4AF37] font-serif tracking-wide">CHÂN TRUYỀN LỀ LỐI TIỀN NHÂN</span> <br />
+        <span class="text-white font-serif text-3xl sm:text-4xl">Bảo Chứng Ngọc Học Thuần Khiết</span>
       </Fragment>
-
       <Fragment slot="subtitle">
-        <span class="text-[#E6D5C3]">Không gian dành riêng cho các bậc đồng đền, đạo quan và nhà sưu tầm trân quý quy thức khăn chầu áo ngự chuẩn Tứ Phủ cùng giá trị vĩnh cửu của ngọc Phỉ Thúy loại A.</span>
+        <span class="text-stone-200">Không gian khảo cứu dành riêng cho các bậc đồng đền, đạo quan và nhà sưu tầm trân quý quy thức khăn chầu áo ngự Tứ Phủ cùng giá trị vĩnh cửu của ngọc Phỉ Thúy loại A.</span>
       </Fragment>
     </Hero>
 
-    <!-- 2. Khăn Chầu Áo Ngự: Đi sâu vào Sắc Tộc Tứ Phủ -->
+    <!-- 2. Sắc Phục Tứ Phủ (Chữ trắng sáng & vàng kim, không bao giờ bị chìm) -->
     <Content
       isReversed
       tagline="SẮC PHỤC TỨ PHỦ"
       title="Quy Thức Khăn Chầu Áo Ngự"
-      classes={{ container: 'text-[#F5EBE1]' }}
+      classes={{ container: 'text-stone-100', title: 'text-[#D4AF37] font-serif' }}
       items={[
-        {
-          title: 'Đỏ Thiên Phủ — Uy Nghi Tối Thượng',
-          description: 'Dành cho hàng Quan Lớn Đệ Nhất, Chầu Đệ Nhất. Sắc đỏ gấm thêu phượng cuộn mây bằng chỉ kim tuyến chuẩn mực, không pha tạp màu sắc hiện đại.',
-        },
-        {
-          title: 'Xanh Nhạc Phủ & Vàng Địa Phủ',
-          description: 'Sắc xanh ngọc bích của rừng ngàn và sắc vàng hoàng kim của lòng đất. Mỗi đường kim đều giữ đúng thần thái tôn nghiêm khi hầu bóng.',
-        },
-        {
-          title: 'Trắng Thoải Phủ — Thanh Khiết Bất Nhiễm',
-          description: 'Sắc trắng tựa nước nguồn ngọc tuyền dành cho giá Thoải Phủ, đính sa hạt và thêu hoa sen giấu chỉ tinh tế.',
-        },
+        { title: 'Đỏ Thiên Phủ — Uy Nghi Tối Thượng', description: 'Gấm thêu chỉ kim tuyến chuẩn mực dành cho hàng Quan Lớn, Chầu Bà Đệ Nhất. Tuyệt đối không phối tạp sắc.' },
+        { title: 'Xanh Nhạc Phủ & Vàng Địa Phủ', description: 'Sắc ngọc bích của rừng ngàn và sắc hoàng kim của đất mẹ. Giữ trọn thần thái tôn nghiêm khi loan giá ngự đồng.' },
+        { title: 'Trắng Thoải Phủ — Thanh Khiết Bất Nhiễm', description: 'Sắc trắng thanh tịnh Thoải Phủ đính sa hạt và thêu hoa sen giấu chỉ tinh tế bậc nhất.' },
       ]}
     >
       <Fragment slot="content">
         <p class="text-[#D4AF37] font-serif italic text-lg mb-2">"Gửi nét chỉ hoa, họa hồn phượng gấm"</p>
-        <span class="text-[#D6C4B2]">Mỗi chiếc áo ngự tại Việt Nghi là một tác phẩm phụng sự, tôn vinh nét đẹp cha truyền con nối.</span>
+        <span class="text-stone-200">Mỗi tấm áo ngự là một lòng thành kính dâng lên Thánh Mẫu và chư vị Thánh triều.</span>
       </Fragment>
     </Content>
 
-    <!-- 3. Giám Định Ngọc Học Minh Bạch -->
-    <Features2
-      title="Minh Bạch Ngọc Học — 100% Cẩm Thạch Loại A"
-      subtitle="Minh bạch tuyệt đối chứng thư quang phổ hồng ngoại FTIR, không xử lý hóa chất."
-      columns={3}
-      items={[
-        {
-          title: 'Giám Định Viện Đá Quý',
-          description: 'Mỗi vòng ngọc đều có mã số kiểm định độc lập từ PNJ Lab / RGG / SJC.',
-          icon: 'tabler:certificate',
-        },
-        {
-          title: 'Nước Ngọc & Độ Mướt',
-          description: 'Chất ngọc mịn màng, thớ ngọc đan chặt, lên nước sáng bóng theo năm tháng dưỡng ngọc.',
-          icon: 'tabler:sparkles',
-        },
-        {
-          title: 'Trường Năng Lượng Đất Mẹ',
-          description: 'Hấp thụ linh khí tự nhiên hàng triệu năm, hỗ trợ điều hòa từ trường và dưỡng tâm an lạc.',
-          icon: 'tabler:shield-check',
-        },
-      ]}
-    />
+    <!-- 3. Giám Định Ngọc Học -->
+    <div class="py-8 bg-[#200303]">
+      <Features2
+        title="Minh Bạch Ngọc Học — 100% Cẩm Thạch Loại A"
+        subtitle="Minh bạch chứng thư quang phổ hồng ngoại FTIR, tuyệt đối không bán ngọc xử lý hóa chất."
+        columns={3}
+        classes={{ title: 'text-[#D4AF37] font-serif', subtitle: 'text-stone-300' }}
+        items={[
+          { title: 'Giám Định Viện Đá Quý', description: 'Kèm mã số kiểm định độc lập từ PNJ Lab / RGG / SJC.', icon: 'tabler:certificate' },
+          { title: 'Nước Ngọc & Độ Mướt', description: 'Thớ ngọc mịn màng, lên nước bóng đẹp theo năm tháng dưỡng ngọc.', icon: 'tabler:sparkles' },
+          { title: 'Trường Năng Lượng Tự Nhiên', description: 'Hấp thụ linh khí đất mẹ, hỗ trợ điều hòa từ trường an định.', icon: 'tabler:shield-check' },
+        ]}
+      />
+    </div>
 
     <!-- 4. Lời Mời Đàm Đạo -->
     <CallToAction
       actions={[
-        {
-          variant: 'primary',
-          text: 'Đàm Đạo Quy Thức & Xem Ngọc',
-          href: 'https://zalo.me',
-          target: '_blank',
-          class: 'bg-[#D4AF37] text-[#180404] font-bold hover:bg-[#b8952b] border-none',
-        },
+        { variant: 'primary', text: 'Đàm Đạo Quy Thức & Xem Ngọc', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[#2D0404] font-bold hover:bg-[#C5A059] border-none' },
       ]}
     >
-      <Fragment slot="title">
-        <span class="font-serif text-[#D4AF37]">Hội Ngộ Cùng Việt Nghi</span>
-      </Fragment>
-      <Fragment slot="subtitle">
-        <span class="text-[#E6D5C3]">Kính mời quý thầy ghé đàm đạo về phục trang tín ngưỡng hoặc soi nước ngọc dưới ánh sáng chuyên dụng.</span>
-      </Fragment>
+      <Fragment slot="title"><span class="text-[#D4AF37] font-serif">Hội Ngộ Cùng Việt Nghi</span></Fragment>
+      <Fragment slot="subtitle"><span class="text-stone-200">Kính mời quý thầy ghé đàm đạo về quy thức phục trang hoặc trực tiếp soi nước ngọc dưới ánh sáng chuyên dụng.</span></Fragment>
     </CallToAction>
   </div>
 </Layout>
