@@ -1,93 +1,119 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Việt Nghi — Gìn giữ lề lối tiền nhân, nuôi dưỡng an yên nội tâm',
+  title: 'Việt Nghi — Chạm nét cổ truyền, tìm an yên giữa phố thị',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- 1. Màn Diện Kiến (Hero) -->
+  <!-- 1. Hero: Năng lượng tươi trẻ & Lời mời chuyển không gian -->
   <Hero
     actions={[
       {
         variant: 'primary',
-        text: 'Thỉnh Duyên Qua Zalo',
+        text: 'Nhận Tư Vấn Chọn Ni Tay',
         href: 'https://zalo.me',
         target: '_blank',
         icon: 'tabler:message-circle',
       },
-      { text: 'Chiêm Ngưỡng Tam Phẩm', href: '#tam-pham' },
+      {
+        text: '☯ Chuyển Sang Không Gian Chân Truyền',
+        href: '/chan-truyen',
+        icon: 'tabler:arrow-narrow-right',
+      },
     ]}
   >
     <Fragment slot="title">
-      Gìn giữ lề lối tiền nhân <br />
-      <span class="text-accent dark:text-emerald-400 highlight">Nuôi dưỡng an yên nội tâm</span>
+      Chạm nét cổ truyền <br />
+      <span class="text-emerald-700 dark:text-emerald-400 highlight">Tìm an yên giữa phố thị</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="font-semibold text-emerald-800 dark:text-emerald-300">Việt Nghi</span> — Không gian tôn vinh vẻ đẹp văn hóa bản địa qua Khăn chầu áo ngự thủ công, Pháp phục thiền tịnh và Ngọc cẩm thạch tự nhiên loại A.
+      <span class="font-semibold text-emerald-800 dark:text-emerald-300">Việt Nghi · Khởi Duyên</span> — Không gian dành cho người trẻ yêu cái đẹp truyền thống. Nơi mỗi chiếc vòng ngọc tự nhiên và nếp áo đũi mộc mang lại sự thư thái, cân bằng năng lượng nội tâm.
     </Fragment>
   </Hero>
 
-  <!-- 2. Giới thiệu Tam Phẩm Tinh Hoa -->
+  <!-- 2. Tam Phẩm theo góc nhìn Hiện đại & Chữa lành -->
   <Features
-    id="tam-pham"
-    tagline="Tam Phẩm Tinh Hoa"
-    title="Nét Đẹp Truyền Thừa & Tâm Thức"
-    subtitle="Mỗi tác phẩm tại Việt Nghi đều được kiến tạo từ sự tôn kính lề lối cổ truyền và chắt lọc năng lượng thuần khiết."
+    id="kham-pha"
+    tagline="Nếp Sống Tỉnh Thức"
+    title="Năng Lượng Thuần Khiết Từ Thiên Nhiên & Bàn Tay Nghệ Nhân"
+    subtitle="Không nặng nề lễ nghi phức tạp, Việt Nghi mang vẻ đẹp cội nguồn hòa nhịp cùng phong cách sống tối giản của người trẻ."
     items={[
       {
-        title: 'Khăn Chầu Áo Ngự',
+        title: 'Vòng Ngọc Cẩm Thạch A',
         description:
-          'Kế thừa mỹ học trang phục tín ngưỡng Đạo Mẫu. Thêu tay thủ công nghiêm cẩn trong từng đường kim mũi chỉ theo đúng điển tích và màu sắc bản mệnh.',
+          '100% ngọc tự nhiên không qua xử lý hay nhuộm màu. Điểm tựa năng lượng an lành, mát lạnh nơi cổ tay, đồng hành cùng bạn qua từng nhịp sống hối hả.',
         icon: 'tabler:sparkles',
       },
       {
-        title: 'Pháp Phục Thiền Tịnh',
+        title: 'Pháp Phục Ứng Dụng',
         description:
-          'Dệt từ sợi tự nhiên như đũi tơ tằm, linen mộc. Thiết kế tối giản, thanh nhã, nâng niu thân tâm trong từng thời khắc hành lễ hay tĩnh tọa.',
+          'Chất liệu đũi tơ tằm, linen mộc mạc thoáng khí. Phom dáng hiện đại, thanh thoát, phù hợp cả khi tĩnh tọa thưởng trà lẫn dạo phố thường nhật.',
         icon: 'tabler:leaf',
       },
       {
-        title: 'Ngọc Cẩm Thạch Loại A',
+        title: 'Mỹ Học Di Sản Bản Địa',
         description:
-          '100% ngọc Phỉ Thúy tự nhiên chưa qua xử lý hóa chất. Minh bạch chứng thư giám định, gửi gắm triết lý ngọc dưỡng người, nuôi dưỡng an lành.',
-        icon: 'tabler:diamond',
+          'Chiêm ngưỡng nghệ thuật thêu tay khăn chầu áo ngự dưới góc nhìn văn hóa và thủ công mỹ nghệ tinh hoa, rũ bỏ mọi định kiến mê tín dị đoan.',
+        icon: 'tabler:palette',
       },
     ]}
   />
 
-  <!-- 3. Tự động kéo bài viết từ bạn Content -->
-  <BlogLatestPosts
-    title="Góc Kể Chuyện & Điển Tích"
-    information="Những lát cắt văn hóa, câu chuyện khảo cứu tín ngưỡng và sổ tay ngọc học được chắt lọc từ tâm huyết."
+  <!-- 3. Hướng dẫn 3 bước đo ni tay trong 30 giây (Giải quyết rào cản người mới) -->
+  <Steps
+    title="Chỉ 30 giây để tìm chiếc vòng ngọc tương hợp"
+    items={[
+      {
+        title: 'Bước 1: Chuẩn bị sợi dây nhỏ',
+        description: 'Dùng một sợi chỉ hoặc mảnh giấy quấn quanh phần rộng nhất của bàn tay khi chụm các ngón lại.',
+        icon: 'tabler:ruler',
+      },
+      {
+        title: 'Bước 2: Đo chiều dài',
+        description: 'Đo chiều dài đoạn dây bằng thước kẻ thông thường để tính ra đường kính (ni tay) chính xác của bạn.',
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Bước 3: Nhắn tin cho Việt Nghi',
+        description: 'Gửi số đo cho chúng tôi để được tư vấn phiến ngọc cẩm thạch có năng lượng và màu sắc tương sinh.',
+        icon: 'tabler:message',
+      },
+    ]}
   />
 
-  <!-- 4. Lời mời kết duyên (Call To Action) -->
+  <!-- 4. Góc Kể Chuyện: Bài viết phong cách chữa lành từ bạn Content -->
+  <BlogLatestPosts
+    title="Góc Tĩnh Lặng & Kể Chuyện"
+    information="Những câu chuyện nhỏ về triết lý ngọc dưỡng người, nếp sống an tịnh và nét đẹp di sản tiền nhân."
+  />
+
+  <!-- 5. Lời gọi kết nối gần gũi -->
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Nhận Tư Vấn Hữu Duyên',
+        text: 'Trò Chuyện Hữu Duyên',
         href: 'https://zalo.me',
         target: '_blank',
-        icon: 'tabler:message-circle',
+        icon: 'tabler:brand-hipchat',
       },
     ]}
   >
     <Fragment slot="title">
-      Khởi Duyên Cùng <span class="text-emerald-800 dark:text-emerald-300">Việt Nghi</span>
+      Mỗi cơ duyên tao ngộ đều là một điều lành
     </Fragment>
 
     <Fragment slot="subtitle">
-      Mỗi vật phẩm là một mối nhân duyên. Kính mời Thầy và quý bạn ghé thăm để lắng nghe những câu chuyện và chọn cho mình vật phẩm tương hợp.
+      Đừng ngần ngại nhắn tin cho Việt Nghi nếu bạn cần một người bạn đồng hành chia sẻ về ngọc, về trang phục mộc và lối sống an yên.
     </Fragment>
   </CallToAction>
 </Layout>
