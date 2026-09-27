@@ -1,0 +1,118 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Việt Nghi — Chân Truyền Lề Lối & Giám Định Ngọc Học',
+  description: 'Khăn chầu áo ngự chuẩn mực Đạo Mẫu và Ngọc cẩm thạch tự nhiên loại A.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- 1. Hero: Tôn nghiêm, trang trọng & Nút quay về Khởi Duyên -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Thỉnh Trang & Thẩm Định',
+        href: 'https://zalo.me',
+        target: '_blank',
+        icon: 'tabler:certificate',
+      },
+      {
+        text: '🌿 Quay Về Không Gian Khởi Duyên',
+        href: '/',
+        icon: 'tabler:arrow-narrow-left',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Chân truyền lề lối tiền nhân <br />
+      <span class="text-amber-600 dark:text-amber-400 highlight">Bảo chứng ngọc học thuần khiết</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="font-semibold text-amber-700 dark:text-amber-300">Việt Nghi · Chân Truyền</span> — Không gian khảo cứu và chiêm ngưỡng dành cho các bậc đồng đền, đạo quan và nhà sưu tầm trân quý quy thức khăn chầu áo ngự chuẩn mực cùng giá trị vĩnh cửu của ngọc Phỉ Thúy loại A.
+    </Fragment>
+  </Hero>
+
+  <!-- 2. Khăn Chầu Áo Ngự: Chi tiết kỹ nghệ thêu tay & Quy thức lề lối -->
+  <Content
+    isReversed
+    tagline="Nghi Lễ Bản Địa"
+    title="Quy Thức Khăn Chầu Áo Ngự Đạo Mẫu"
+    items={[
+      {
+        title: 'Chuẩn Mực Sắc Tộc & Hàng Tứ Phủ',
+        description:
+          'Mỗi giá chầu, giá quan đều tuân thủ nghiêm ngặt hệ thống sắc phục: Đỏ (Thiên phủ), Vàng (Địa phủ), Xanh (Nhạc phủ), Trắng (Thoải phủ). Tuyệt đối không phối màu tùy tiện làm sai lệch lề lối.',
+      },
+      {
+        title: 'Nghệ Thuật Thêu Tay Độc Bản',
+        description:
+          'Từng mũi chỉ kim tuyến, sa hạt, rồng cuộn mây, hoa cúc mẫu đơn đều được nghệ nhân lành nghề gia công tỉ mỉ hàng tháng trời, đảm bảo thần thái tôn nghiêm khi thượng đồng.',
+      },
+      {
+        title: 'Chất Liệu Gấm & Tơ Thượng Hạng',
+        description:
+          'Lựa chọn gấm hoa chìm, lụa tơ tằm cổ truyền đứng phom, giữ được sự uy nghi, bền bỉ qua năm tháng phụng sự việc họ việc làng.',
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Thêu Kính Phụng Tiền Nhân</h3>
+      Y phục không đơn thuần là trang phục, mà là tấm lòng thành kính dâng lên Thánh Mẫu và chư vị thánh triều.
+    </Fragment>
+  </Content>
+
+  <!-- 3. Ngọc Cẩm Thạch Loại A: 3 Trụ Cột Giám Định Minh Bạch -->
+  <Features2
+    title="Minh Bạch Ngọc Học — 100% Cẩm Thạch Tự Nhiên Loại A"
+    subtitle="Việt Nghi giữ vững tôn chỉ: Không kinh doanh ngọc xử lý hóa chất (Loại B) hay nhuộm màu nhân tạo (Loại C)."
+    columns={3}
+    items={[
+      {
+        title: 'Chứng Thư Giám Định Độc Lập',
+        description:
+          'Mỗi chiếc vòng đều kèm theo kết quả kiểm định từ các Viện giám định đá quý uy tín (PNJ Lab, RGG, SJC), minh bạch kết quả quang phổ hồng ngoại FTIR.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Độ Mướt & Nước Ngọc Tự Nhiên',
+        description:
+          'Chất ngọc mịn màng, thớ ngọc đan chặt chẽ, lên nước bóng đẹp theo thời gian tiếp xúc với hơi ấm và năng lượng của người đeo.',
+        icon: 'tabler:sparkles',
+      },
+      {
+        title: 'Triết Lý Ngọc Dưỡng Người',
+        description:
+          'Giữ trọn trường sinh khí thuần khiết của lòng đất hàng triệu năm, hỗ trợ điều hòa từ trường cá nhân và mang lại tâm thái an định, vững chãi.',
+        icon: 'tabler:droplet',
+      },
+    ]}
+  />
+
+  <!-- 4. Lời mời thỉnh trang & thẩm định trực tiếp -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Liên Hệ Đặt May & Chọn Vòng',
+        href: 'https://zalo.me',
+        target: '_blank',
+        icon: 'tabler:phone-call',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Hữu Duyên Hội Ngộ Cùng <span class="text-amber-600 dark:text-amber-400">Việt Nghi</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Kính mời quý thầy, quý bạn đồng anh lính chị ghé đàm đạo về quy thức phục trang hoặc trực tiếp soi nước ngọc dưới ánh sáng quang học.
+    </Fragment>
+  </CallToAction>
+</Layout>
