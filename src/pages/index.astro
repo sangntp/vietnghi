@@ -12,51 +12,55 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- NÚT CHUYỂN KHÔNG GIAN CỐ ĐỊNH TRÊN ĐẦU TRANG -->
-  <div class="bg-amber-50 dark:bg-stone-900 border-b border-amber-200 dark:border-stone-800 text-center py-2 px-4 flex justify-center items-center gap-3">
-    <span class="text-xs text-stone-700 dark:text-stone-300">Không gian Khởi Duyên (Dành cho người trẻ)</span>
-    <a href="/chan-truyen" class="bg-[#5C0606] text-white hover:bg-[#7A1C1C] px-3 py-1 rounded-full text-xs font-semibold shadow transition">
-      ☯ Sang Không Gian Chân Truyền (Lề Lối & Ngọc Học) →
-    </a>
+  <!-- 1. VỀ VIỆT NGHI (Khớp với link #ve-viet-nghi) -->
+  <div id="ve-viet-nghi">
+    <Hero
+      actions={[
+        { variant: 'primary', text: 'Nhận Tư Vấn Chọn Ni Tay', href: 'https://zalo.me', target: '_blank', icon: 'tabler:message-circle' },
+        { text: 'Khám Phá Tam Phẩm', href: '#ngoc-cam-thach' }
+      ]}
+    >
+      <Fragment slot="title">
+        Chạm nét cổ truyền <br />
+        <span class="text-[#1B4D3E] dark:text-[#3CB371]">Tìm an yên giữa phố thị</span>
+      </Fragment>
+      <Fragment slot="subtitle">
+        Nơi mỗi chiếc vòng ngọc tự nhiên và nếp áo đũi mộc mang lại sự thư thái, cân bằng năng lượng nội tâm cho người trẻ hiện đại.
+      </Fragment>
+    </Hero>
   </div>
 
-  <Hero
-    actions={[
-      { variant: 'primary', text: 'Nhận Tư Vấn Chọn Ni Tay', href: 'https://zalo.me', target: '_blank', icon: 'tabler:message-circle' },
-      { text: 'Khám Phá Tam Phẩm', href: '#kham-pha' }
-    ]}
-  >
-    <Fragment slot="title">
-      Chạm nét cổ truyền <br />
-      <span class="text-[#1B4D3E] dark:text-[#3CB371]">Tìm an yên giữa phố thị</span>
-    </Fragment>
-    <Fragment slot="subtitle">
-      Nơi mỗi chiếc vòng ngọc tự nhiên và nếp áo đũi mộc mang lại sự thư thái, cân bằng năng lượng nội tâm cho người trẻ hiện đại.
-    </Fragment>
-  </Hero>
+  <!-- 2. TAM PHẨM (Gắn ID cho từng sản phẩm) -->
+  <div id="ngoc-cam-thach">
+    <Features
+      tagline="Nếp Sống Tỉnh Thức"
+      title="Năng Lượng Thuần Khiết & Bàn Tay Thủ Công"
+      items={[
+        { title: 'Vòng Ngọc Cẩm Thạch A', description: '100% ngọc tự nhiên không nhuộm màu. Điểm tựa an lành mát lạnh nơi cổ tay.', icon: 'tabler:sparkles' },
+        { title: 'Pháp Phục Ứng Dụng', description: 'Đũi tơ tằm, linen mộc thoáng khí. Tối giản, thanh lịch khi tĩnh tọa hay dạo phố.', icon: 'tabler:leaf' },
+        { title: 'Mỹ Học Bản Địa', description: 'Thưởng lãm nghệ thuật thêu tay truyền thống dưới lăng kính đương đại.', icon: 'tabler:palette' },
+      ]}
+    />
+  </div>
 
-  <Features
-    id="kham-pha"
-    tagline="Nếp Sống Tỉnh Thức"
-    title="Năng Lượng Thuần Khiết & Bàn Tay Thủ Công"
-    items={[
-      { title: 'Vòng Ngọc Cẩm Thạch A', description: '100% ngọc tự nhiên không nhuộm màu. Điểm tựa an lành mát lạnh nơi cổ tay.', icon: 'tabler:sparkles' },
-      { title: 'Pháp Phục Ứng Dụng', description: 'Đũi tơ tằm, linen mộc thoáng khí. Tối giản, thanh lịch khi tĩnh tọa hay dạo phố.', icon: 'tabler:leaf' },
-      { title: 'Mỹ Học Bản Địa', description: 'Thưởng lãm nghệ thuật thêu tay truyền thống dưới lăng kính đương đại.', icon: 'tabler:palette' },
-    ]}
-  />
+  <!-- 3. ĐO NI TAY (Khớp với link #do-ni-tay) -->
+  <div id="do-ni-tay">
+    <Steps
+      title="30 giây để tìm chiếc vòng ngọc vừa vặn"
+      items={[
+        { title: 'Bước 1: Quấn dây', description: 'Dùng sợi chỉ quấn quanh phần rộng nhất của bàn tay.', icon: 'tabler:ruler' },
+        { title: 'Bước 2: Đo chiều dài', description: 'Đo chiều dài sợi chỉ bằng thước kẻ để xác định ni tay.', icon: 'tabler:check' },
+        { title: 'Bước 3: Nhận tư vấn', description: 'Gửi số đo để Việt Nghi chọn phiến ngọc tương sinh.', icon: 'tabler:message' },
+      ]}
+    />
+  </div>
 
-  <Steps
-    title="30 giây để tìm chiếc vòng ngọc vừa vặn"
-    items={[
-      { title: 'Bước 1: Quấn dây', description: 'Dùng sợi chỉ quấn quanh phần rộng nhất của bàn tay.', icon: 'tabler:ruler' },
-      { title: 'Bước 2: Đo chiều dài', description: 'Đo chiều dài sợi chỉ bằng thước kẻ để xác định ni tay.', icon: 'tabler:check' },
-      { title: 'Bước 3: Nhận tư vấn', description: 'Gửi số đo để Việt Nghi chọn phiến ngọc tương sinh.', icon: 'tabler:message' },
-    ]}
-  />
+  <!-- 4. GÓC KỂ CHUYỆN -->
+  <div id="goc-ke-chuyen">
+    <BlogLatestPosts title="Góc Tĩnh Lặng & Kể Chuyện" information="Những mẩu chuyện nhỏ về triết lý ngọc dưỡng người và nét đẹp tiền nhân." />
+  </div>
 
-  <BlogLatestPosts title="Góc Tĩnh Lặng & Kể Chuyện" information="Những mẩu chuyện nhỏ về triết lý ngọc dưỡng người và nét đẹp tiền nhân." />
-
+  <!-- 5. KẾT DUYÊN -->
   <CallToAction actions={[{ variant: 'primary', text: 'Trò Chuyện Hữu Duyên', href: 'https://zalo.me', target: '_blank' }]}>
     <Fragment slot="title">Mỗi cơ duyên tao ngộ đều là một điều lành</Fragment>
   </CallToAction>
