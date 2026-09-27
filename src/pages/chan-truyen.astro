@@ -11,52 +11,65 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- NỀN ĐỎ GẤM THIÊN PHỦ XUYÊN SUỐT CẢ TRANG -->
-  <div class="bg-[#2D0404] text-[#F7EFE9] min-h-screen">
+  <!-- NỀN ĐỎ GẤM THIÊN PHỦ TOÀN DIỆN -->
+  <div class="bg-[#240303] text-[#F7EFE9] min-h-screen">
     
-    <!-- THANH CHUYỂN KHÔNG GIAN DẪN VỀ KHỞI DUYÊN -->
-    <div class="bg-[#1A0202] border-b border-[#D4AF37]/30 text-center py-2 px-4 flex justify-center items-center gap-3">
-      <span class="text-xs text-[#D4AF37] font-serif">KHÔNG GIAN CHÂN TRUYỀN (LỀ LỐI ĐẠO MẪU & NGỌC HỌC)</span>
-      <a href="/" class="bg-[#FAF8F5] text-[#1B4D3E] hover:bg-white px-3 py-1 rounded-full text-xs font-semibold shadow transition">
-        🌿 Về Không Gian Khởi Duyên (Người Trẻ) →
-      </a>
+    <!-- THANH CHUYỂN ĐỔI PHONG CÁCH SEGMENTED PILL HOÀNG KIM (CỐ ĐỊNH TRÊN ĐẦU) -->
+    <div class="sticky top-16 z-30 flex justify-center py-3 bg-[#1A0202]/90 backdrop-blur-md border-b border-[#D4AF37]/30">
+      <div class="inline-flex p-1.5 bg-[#380505] rounded-full border border-[#D4AF37]/40 shadow-inner">
+        <!-- Nấc 1: Nút bấm quay về Khởi Duyên -->
+        <a
+          href="/"
+          class="px-5 py-1.5 rounded-full text-xs font-medium text-stone-300 hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5"
+        >
+          🌿 Khởi Duyên (Người Trẻ)
+        </a>
+        <!-- Nấc 2: Đang kích hoạt (Chân Truyền) -->
+        <span class="px-5 py-1.5 rounded-full text-xs font-bold bg-[#8B0000] text-[#D4AF37] border border-[#D4AF37]/60 shadow-md flex items-center gap-1.5 cursor-default">
+          ☯ Chân Truyền (Lề Lối)
+        </span>
+      </div>
     </div>
 
-    <!-- 1. Hero: Đỏ Rượu & Vàng Kim -->
-    <Hero
-      actions={[
-        { variant: 'primary', text: 'Thỉnh Trang & Thẩm Định', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[#2D0404] hover:bg-[#C5A059] font-bold border-none' },
-      ]}
-    >
-      <Fragment slot="title">
-        <span class="text-[#D4AF37] font-serif tracking-wide">CHÂN TRUYỀN LỀ LỐI TIỀN NHÂN</span> <br />
-        <span class="text-white font-serif text-3xl sm:text-4xl">Bảo Chứng Ngọc Học Thuần Khiết</span>
-      </Fragment>
-      <Fragment slot="subtitle">
-        <span class="text-stone-200">Không gian khảo cứu dành riêng cho các bậc đồng đền, đạo quan và nhà sưu tầm trân quý quy thức khăn chầu áo ngự Tứ Phủ cùng giá trị vĩnh cửu của ngọc Phỉ Thúy loại A.</span>
-      </Fragment>
-    </Hero>
+    <!-- 1. HERO -->
+    <div id="ve-viet-nghi">
+      <Hero
+        actions={[
+          { variant: 'primary', text: 'Thỉnh Trang & Thẩm Định', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[#240303] hover:bg-[#C5A059] font-bold border-none' },
+        ]}
+      >
+        <Fragment slot="title">
+          <span class="text-[#D4AF37] font-serif tracking-wide">CHÂN TRUYỀN LỀ LỐI TIỀN NHÂN</span> <br />
+          <span class="text-white font-serif text-3xl sm:text-4xl">Bảo Chứng Ngọc Học Thuần Khiết</span>
+        </Fragment>
+        <Fragment slot="subtitle">
+          <span class="text-stone-200">Không gian khảo cứu dành riêng cho các bậc đồng đền, đạo quan và nhà sưu tầm trân quý quy thức khăn chầu áo ngự Tứ Phủ cùng giá trị vĩnh cửu của ngọc Phỉ Thúy loại A.</span>
+        </Fragment>
+      </Hero>
+    </div>
 
-    <!-- 2. Sắc Phục Tứ Phủ (Chữ trắng sáng & vàng kim, không bao giờ bị chìm) -->
-    <Content
-      isReversed
-      tagline="SẮC PHỤC TỨ PHỦ"
-      title="Quy Thức Khăn Chầu Áo Ngự"
-      classes={{ container: 'text-stone-100', title: 'text-[#D4AF37] font-serif' }}
-      items={[
-        { title: 'Đỏ Thiên Phủ — Uy Nghi Tối Thượng', description: 'Gấm thêu chỉ kim tuyến chuẩn mực dành cho hàng Quan Lớn, Chầu Bà Đệ Nhất. Tuyệt đối không phối tạp sắc.' },
-        { title: 'Xanh Nhạc Phủ & Vàng Địa Phủ', description: 'Sắc ngọc bích của rừng ngàn và sắc hoàng kim của đất mẹ. Giữ trọn thần thái tôn nghiêm khi loan giá ngự đồng.' },
-        { title: 'Trắng Thoải Phủ — Thanh Khiết Bất Nhiễm', description: 'Sắc trắng thanh tịnh Thoải Phủ đính sa hạt và thêu hoa sen giấu chỉ tinh tế bậc nhất.' },
-      ]}
-    >
-      <Fragment slot="content">
-        <p class="text-[#D4AF37] font-serif italic text-lg mb-2">"Gửi nét chỉ hoa, họa hồn phượng gấm"</p>
-        <span class="text-stone-200">Mỗi tấm áo ngự là một lòng thành kính dâng lên Thánh Mẫu và chư vị Thánh triều.</span>
-      </Fragment>
-    </Content>
+    <!-- 2. SẮC PHỤC TỨ PHỦ -->
+    <div id="tam-pham">
+      <Content
+        isReversed
+        tagline="SẮC PHỤC TỨ PHỦ"
+        title="Quy Thức Khăn Chầu Áo Ngự"
+        classes={{ container: 'text-stone-100', title: 'text-[#D4AF37] font-serif' }}
+        items={[
+          { title: 'Đỏ Thiên Phủ — Uy Nghi Tối Thượng', description: 'Gấm thêu chỉ kim tuyến chuẩn mực dành cho hàng Quan Lớn, Chầu Bà Đệ Nhất. Tuyệt đối không phối tạp sắc.' },
+          { title: 'Xanh Nhạc Phủ & Vàng Địa Phủ', description: 'Sắc ngọc bích của rừng ngàn và sắc hoàng kim của đất mẹ. Giữ trọn thần thái tôn nghiêm khi loan giá ngự đồng.' },
+          { title: 'Trắng Thoải Phủ — Thanh Khiết Bất Nhiễm', description: 'Sắc trắng thanh tịnh Thoải Phủ đính sa hạt và thêu hoa sen giấu chỉ tinh tế bậc nhất.' },
+        ]}
+      >
+        <Fragment slot="content">
+          <p class="text-[#D4AF37] font-serif italic text-lg mb-2">"Gửi nét chỉ hoa, họa hồn phượng gấm"</p>
+          <span class="text-stone-200">Mỗi tấm áo ngự là một lòng thành kính dâng lên Thánh Mẫu và chư vị Thánh triều.</span>
+        </Fragment>
+      </Content>
+    </div>
 
-    <!-- 3. Giám Định Ngọc Học -->
-    <div class="py-8 bg-[#200303]">
+    <!-- 3. GIÁM ĐỊNH NGỌC HỌC -->
+    <div id="do-ni-tay" class="py-8 bg-[#1A0202]">
       <Features2
         title="Minh Bạch Ngọc Học — 100% Cẩm Thạch Loại A"
         subtitle="Minh bạch chứng thư quang phổ hồng ngoại FTIR, tuyệt đối không bán ngọc xử lý hóa chất."
@@ -70,10 +83,10 @@ const metadata = {
       />
     </div>
 
-    <!-- 4. Lời Mời Đàm Đạo -->
+    <!-- 4. LỜI MỜI ĐÀM ĐẠO -->
     <CallToAction
       actions={[
-        { variant: 'primary', text: 'Đàm Đạo Quy Thức & Xem Ngọc', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[#2D0404] font-bold hover:bg-[#C5A059] border-none' },
+        { variant: 'primary', text: 'Đàm Đạo Quy Thức & Xem Ngọc', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[#240303] font-bold hover:bg-[#C5A059] border-none' },
       ]}
     >
       <Fragment slot="title"><span class="text-[#D4AF37] font-serif">Hội Ngộ Cùng Việt Nghi</span></Fragment>
