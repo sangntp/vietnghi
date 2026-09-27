@@ -12,92 +12,52 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- TOÀN BỘ KHÔNG GIAN TRẮNG KEM GIẤY DÓ & XANH MINT CHỮA LÀNH -->
-  <div class="bg-[#FAF8F5] text-[#2C3E35]">
-    
-    <!-- THANH CHUYỂN KHÔNG GIAN DẪN SANG CHÂN TRUYỀN -->
-    <div class="bg-[#F0EAE1] text-center py-2 px-4 text-xs tracking-wider border-b border-[#E2D5BE] flex justify-center items-center gap-3">
-      <span class="text-[#2C3E35] font-medium">Bạn đang ở không gian Khởi Duyên (Phong cách tối giản)</span>
-      <a href="/chan-truyen" class="bg-[#5C0606] text-[#F5EBE1] font-semibold px-3 py-1 rounded-full text-xs hover:bg-[#7A1C1C] transition shadow">
-        ☯ Xem giao diện Chân Truyền (Nghi Lễ & Ngọc Học)
-      </a>
-    </div>
-
-    <!-- 1. Hero Tươi Sáng -->
-    <Hero
-      actions={[
-        {
-          variant: 'primary',
-          text: 'Nhận Tư Vấn Chọn Ni Tay',
-          href: 'https://zalo.me',
-          target: '_blank',
-          class: 'bg-[#1B4D3E] text-white hover:bg-[#256854]',
-        },
-      ]}
-    >
-      <Fragment slot="title">
-        Chạm nét cổ truyền <br />
-        <span class="text-[#1B4D3E] highlight">Tìm an yên giữa phố thị</span>
-      </Fragment>
-
-      <Fragment slot="subtitle">
-        Không gian dành cho người trẻ yêu cái đẹp truyền thống. Nơi mỗi chiếc vòng ngọc tự nhiên và nếp áo đũi mộc mang lại sự thư thái, cân bằng năng lượng nội tâm.
-      </Fragment>
-    </Hero>
-
-    <!-- 2. Tam Phẩm Tinh Hoa -->
-    <Features
-      id="kham-pha"
-      tagline="Nếp Sống Tỉnh Thức"
-      title="Năng Lượng Thuần Khiết & Bàn Tay Thủ Công"
-      items={[
-        {
-          title: 'Vòng Ngọc Cẩm Thạch A',
-          description: '100% ngọc tự nhiên không nhuộm màu. Điểm tựa an lành mát lạnh nơi cổ tay người trẻ.',
-          icon: 'tabler:sparkles',
-        },
-        {
-          title: 'Pháp Phục Ứng Dụng',
-          description: 'Đũi tơ tằm, linen mộc thoáng khí. Tối giản, thanh lịch khi tĩnh tọa hay dạo phố.',
-          icon: 'tabler:leaf',
-        },
-        {
-          title: 'Mỹ Học Bản Địa',
-          description: 'Thưởng lãm nghệ thuật thêu tay truyền thống dưới lăng kính văn hóa đương đại.',
-          icon: 'tabler:palette',
-        },
-      ]}
-    />
-
-    <!-- 3. Hướng dẫn đo ni tay 30s -->
-    <Steps
-      title="30 giây để tìm chiếc vòng ngọc vừa vặn"
-      items={[
-        { title: 'Bước 1', description: 'Dùng sợi chỉ quấn quanh phần rộng nhất của bàn tay.', icon: 'tabler:ruler' },
-        { title: 'Bước 2', description: 'Đo chiều dài sợi chỉ bằng thước kẻ thông thường.', icon: 'tabler:check' },
-        { title: 'Bước 3', description: 'Gửi số đo cho Việt Nghi để nhận tư vấn ni tay tương hợp.', icon: 'tabler:message' },
-      ]}
-    />
-
-    <!-- 4. Blog -->
-    <BlogLatestPosts
-      title="Góc Tĩnh Lặng & Kể Chuyện"
-      information="Những câu chuyện nhỏ về triết lý ngọc dưỡng người và nếp sống an tịnh."
-    />
-
-    <!-- 5. CTA -->
-    <CallToAction
-      actions={[
-        {
-          variant: 'primary',
-          text: 'Trò Chuyện Hữu Duyên',
-          href: 'https://zalo.me',
-          target: '_blank',
-          class: 'bg-[#1B4D3E] text-white hover:bg-[#256854]',
-        },
-      ]}
-    >
-      <Fragment slot="title">Mỗi cơ duyên tao ngộ đều là một điều lành</Fragment>
-    </CallToAction>
+  <!-- NÚT CHUYỂN KHÔNG GIAN CỐ ĐỊNH TRÊN ĐẦU TRANG -->
+  <div class="bg-amber-50 dark:bg-stone-900 border-b border-amber-200 dark:border-stone-800 text-center py-2 px-4 flex justify-center items-center gap-3">
+    <span class="text-xs text-stone-700 dark:text-stone-300">Không gian Khởi Duyên (Dành cho người trẻ)</span>
+    <a href="/chan-truyen" class="bg-[#5C0606] text-white hover:bg-[#7A1C1C] px-3 py-1 rounded-full text-xs font-semibold shadow transition">
+      ☯ Sang Không Gian Chân Truyền (Lề Lối & Ngọc Học) →
+    </a>
   </div>
+
+  <Hero
+    actions={[
+      { variant: 'primary', text: 'Nhận Tư Vấn Chọn Ni Tay', href: 'https://zalo.me', target: '_blank', icon: 'tabler:message-circle' },
+      { text: 'Khám Phá Tam Phẩm', href: '#kham-pha' }
+    ]}
+  >
+    <Fragment slot="title">
+      Chạm nét cổ truyền <br />
+      <span class="text-[#1B4D3E] dark:text-[#3CB371]">Tìm an yên giữa phố thị</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Nơi mỗi chiếc vòng ngọc tự nhiên và nếp áo đũi mộc mang lại sự thư thái, cân bằng năng lượng nội tâm cho người trẻ hiện đại.
+    </Fragment>
+  </Hero>
+
+  <Features
+    id="kham-pha"
+    tagline="Nếp Sống Tỉnh Thức"
+    title="Năng Lượng Thuần Khiết & Bàn Tay Thủ Công"
+    items={[
+      { title: 'Vòng Ngọc Cẩm Thạch A', description: '100% ngọc tự nhiên không nhuộm màu. Điểm tựa an lành mát lạnh nơi cổ tay.', icon: 'tabler:sparkles' },
+      { title: 'Pháp Phục Ứng Dụng', description: 'Đũi tơ tằm, linen mộc thoáng khí. Tối giản, thanh lịch khi tĩnh tọa hay dạo phố.', icon: 'tabler:leaf' },
+      { title: 'Mỹ Học Bản Địa', description: 'Thưởng lãm nghệ thuật thêu tay truyền thống dưới lăng kính đương đại.', icon: 'tabler:palette' },
+    ]}
+  />
+
+  <Steps
+    title="30 giây để tìm chiếc vòng ngọc vừa vặn"
+    items={[
+      { title: 'Bước 1: Quấn dây', description: 'Dùng sợi chỉ quấn quanh phần rộng nhất của bàn tay.', icon: 'tabler:ruler' },
+      { title: 'Bước 2: Đo chiều dài', description: 'Đo chiều dài sợi chỉ bằng thước kẻ để xác định ni tay.', icon: 'tabler:check' },
+      { title: 'Bước 3: Nhận tư vấn', description: 'Gửi số đo để Việt Nghi chọn phiến ngọc tương sinh.', icon: 'tabler:message' },
+    ]}
+  />
+
+  <BlogLatestPosts title="Góc Tĩnh Lặng & Kể Chuyện" information="Những mẩu chuyện nhỏ về triết lý ngọc dưỡng người và nét đẹp tiền nhân." />
+
+  <CallToAction actions={[{ variant: 'primary', text: 'Trò Chuyện Hữu Duyên', href: 'https://zalo.me', target: '_blank' }]}>
+    <Fragment slot="title">Mỗi cơ duyên tao ngộ đều là một điều lành</Fragment>
+  </CallToAction>
 </Layout>
