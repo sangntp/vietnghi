@@ -3,10 +3,6 @@ import { getBlogPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Khởi Duyên',
-      href: '/#ve-viet-nghi',
-    },
-    {
       text: 'Tam Phẩm',
       links: [
         { text: 'Vòng Ngọc Cẩm Thạch A', href: '/#ngoc-cam-thach' },
@@ -24,11 +20,6 @@ export const headerData = {
     },
   ],
   actions: [
-    {
-      text: '☯ Chân Truyền',
-      href: '/chan-truyen',
-      class: 'border border-amber-500 text-amber-600 dark:text-amber-400 font-semibold px-3 py-1.5 rounded-full text-xs hover:bg-amber-500 hover:text-white transition',
-    },
     {
       text: 'Thỉnh Duyên',
       href: 'https://zalo.me',
