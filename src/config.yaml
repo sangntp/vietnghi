@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: 'Việt Nghi'
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,7 +9,7 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
+    default: 'Việt Nghi — Tinh Hoa Bản Địa & Ngọc Tự Nhiên'
     template: '%s — AstroWind'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
@@ -32,6 +32,9 @@ i18n:
   textDirection: ltr
 
 apps:
+  announcement:
+    isEnabled: false
+    
   blog:
     isEnabled: true
     postsPerPage: 8
