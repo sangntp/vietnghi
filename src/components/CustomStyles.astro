@@ -46,3 +46,80 @@
     }
   }
 </style>
+
+<!-- CÔNG TẮC CHUYỂN ĐỔI 2 PHONG CÁCH NAVBAR CHO VIỆT NGHI -->
+<script is:inline>
+  const THEME_DATA = {
+    theme1: {
+      btnLabel: '☯ Tinh Hoa',
+      links: ['Khởi Duyên', 'Tam Phẩm', 'Góc Kể Chuyện', 'Minh Bạch Giám Định'],
+      dropdown: ['Khăn Chầu Áo Ngự', 'Pháp Phục Thiền Tịnh', 'Ngọc Cẩm Thạch Loại A'],
+      cta: 'Thỉnh Duyên'
+    },
+    theme2: {
+      btnLabel: '☯ Cổ Phong',
+      links: ['Diện Kiến', 'Tác Phẩm', 'Điển Tích & Ngọc Học', 'Chỉ Dẫn Đo Ni'],
+      dropdown: ['Y Phục Nghi Lễ', 'Trang Phục Thường Nhật', 'Ngọc Phỉ Thúy Loại A'],
+      cta: 'Trò Chuyện'
+    }
+  };
+
+  function applyNavTheme(themeKey) {
+    localStorage.setItem('vietnghi_nav_theme', themeKey);
+    const data = THEME_DATA[themeKey];
+
+    // Cập nhật nhãn nút công tắc
+    const toggleBtn = document.getElementById('theme-nav-toggle');
+    if (toggleBtn) toggleBtn.innerText = data.btnLabel;
+
+    // Cập nhật các menu chính
+    const navLinks = document.querySelectorAll('header nav > ul > li > a, header nav > ul > li > button');
+    if (navLinks.length >= 4) {
+      data.links.forEach((text, i) => {
+        if (navLinks[i]) {
+          // Giữ lại icon mũi tên nếu có
+          const icon = navLinks[i].querySelector('svg');
+          navLinks[i].childNodes[0].textContent = text + ' ';
+          if (icon) navLinks[i].appendChild(icon);
+        }
+      });
+    }
+
+    // Cập nhật các mục trong menu thả xuống (Tam Phẩm)
+    const subLinks = document.querySelectorAll('header nav ul ul li a');
+    if (subLinks.length >= 3) {
+      data.dropdown.forEach((text, i) => {
+        if (subLinks[i]) subLinks[i].textContent = text;
+      });
+    }
+
+    // Cập nhật nút CTA
+    const ctaBtn = document.querySelector('header .actions a, header a.btn-primary');
+    if (ctaBtn) ctaBtn.textContent = data.cta;
+  }
+
+  function initNavToggle() {
+    let currentTheme = localStorage.getItem('vietnghi_nav_theme') || 'theme1';
+
+    // Tạo nút bấm công tắc đưa vào thanh công cụ
+    const actionsContainer = document.querySelector('header .items-center.flex.gap-3') || document.querySelector('header .actions');
+    if (actionsContainer && !document.getElementById('theme-nav-toggle')) {
+      const btn = document.createElement('button');
+      btn.id = 'theme-nav-toggle';
+      btn.type = 'button';
+      btn.className = 'text-xs px-2.5 py-1.5 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition font-medium mr-1 text-emerald-800 dark:text-emerald-300';
+      btn.title = 'Bấm để đổi phong cách thanh Menu';
+      btn.onclick = () => {
+        currentTheme = currentTheme === 'theme1' ? 'theme2' : 'theme1';
+        applyNavTheme(currentTheme);
+      };
+      actionsContainer.prepend(btn);
+    }
+
+    applyNavTheme(currentTheme);
+  }
+
+  // Tự động chạy khi tải trang
+  document.addEventListener('DOMContentLoaded', initNavToggle);
+  document.addEventListener('astro:after-swap', initNavToggle);
+</script>
