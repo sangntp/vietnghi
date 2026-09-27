@@ -25,19 +25,19 @@ export const headerData = {
     },
     {
       text: 'Góc Kể Chuyện',
-      href: '/blog',
+      href: getBlogPermalink(),
     },
     {
       text: 'Minh Bạch Giám Định',
       href: '/#minh-bach-giam-dinh',
     },
   ],
-  actions: [
-    {
-      text: 'Thỉnh Duyên',
-      href: 'https://zalo.me/SỐ_ĐIỆN_THOẠI_CỦA_THẦY', // Thay bằng số Zalo hoặc link Fanpage
-      target: '_blank',
-      variant: 'primary',
-    },
-  ],
+  actions: [{ text: 'Thỉnh Duyên', href: 'https://zalo.me', target: '_blank' }],
+};
+
+export const footerData = {
+  links: [],
+  secondaryLinks: [],
+  socialLinks: [],
+  footNote: `© ${new Date().getFullYear()} Việt Nghi · Gìn giữ lề lối tiền nhân.`,
 };
