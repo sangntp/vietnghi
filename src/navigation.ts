@@ -1,49 +1,42 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getBlogPermalink } from './utils/permalinks';
 
-// ==========================================
-// BỘ MENU THEME 1: "Tam Phẩm Tinh Hoa" (Hiện đại, tối ưu chuyển đổi)
-// ==========================================
-const headerTheme1 = {
+export const headerData = {
   links: [
-    { text: 'Khởi Duyên', href: '/#ve-viet-nghi' },
+    {
+      text: 'Khởi Duyên',
+      href: '/#ve-viet-nghi',
+    },
     {
       text: 'Tam Phẩm',
       links: [
-        { text: 'Khăn Chầu Áo Ngự', href: '/#khan-chau-ao-ngu' },
-        { text: 'Pháp Phục Thiền Tịnh', href: '/#phap-phuc' },
-        { text: 'Ngọc Cẩm Thạch Loại A', href: '/#ngoc-cam-thach' },
+        { text: 'Vòng Ngọc Cẩm Thạch A', href: '/#ngoc-cam-thach' },
+        { text: 'Pháp Phục Ứng Dụng', href: '/#phap-phuc' },
+        { text: 'Khăn Chầu Áo Ngự', href: '/#khan-chau' },
       ],
     },
-    { text: 'Góc Kể Chuyện', href: getBlogPermalink() },
-    { text: 'Minh Bạch Giám Định', href: '/#minh-bach-giam-dinh' },
-  ],
-  actions: [{ text: 'Thỉnh Duyên', href: 'https://zalo.me', target: '_blank' }],
-};
-
-// ==========================================
-// BỘ MENU THEME 2: "Hành Trình Chiêm Nghiệm" (Sâu lắng, đậm chất cổ phong)
-// ==========================================
-const headerTheme2 = {
-  links: [
-    { text: 'Diện Kiến', href: '/#hero' },
     {
-      text: 'Tác Phẩm',
-      links: [
-        { text: 'Y Phục Nghi Lễ', href: '/#khan-chau-ao-ngu' },
-        { text: 'Trang Phục Thường Nhật', href: '/#phap-phuc' },
-        { text: 'Ngọc Phỉ Thúy Loại A', href: '/#ngoc-cam-thach' },
-      ],
+      text: 'Đo Ni Tay',
+      href: '/#do-ni-tay',
     },
-    { text: 'Điển Tích & Ngọc Học', href: getBlogPermalink() },
-    { text: 'Chỉ Dẫn Đo Ni', href: '/#huong-dan-ni' },
+    {
+      text: 'Góc Kể Chuyện',
+      href: getBlogPermalink(),
+    },
   ],
-  actions: [{ text: 'Trò Chuyện Hữu Duyên', href: 'https://zalo.me', target: '_blank' }],
+  actions: [
+    {
+      text: '☯ Chân Truyền',
+      href: '/chan-truyen',
+      class: 'border border-amber-500 text-amber-600 dark:text-amber-400 font-semibold px-3 py-1.5 rounded-full text-xs hover:bg-amber-500 hover:text-white transition',
+    },
+    {
+      text: 'Thỉnh Duyên',
+      href: 'https://zalo.me',
+      target: '_blank',
+      variant: 'primary',
+    },
+  ],
 };
-
-// =====================================================================
-// 👉 CÔNG TẮC ĐỔI THEME: Chọn 'headerTheme1' HOẶC 'headerTheme2' ở đây
-// =====================================================================
-export const headerData = headerTheme1; 
 
 export const footerData = {
   links: [],
