@@ -1,102 +1,41 @@
 ---
-// Font family is provided by Astro's native Fonts API (see `fonts` in
-// astro.config.ts and <Font /> in Layout.astro), exposed as `--font-inter`.
-// To switch typefaces, change the `fonts` entry and repoint `--aw-font-*` below.
+// Không dùng script can thiệp DOM nữa để triệt tiêu 100% lỗi cache
 ---
+
+<!-- NẠP FONT GOOGLE CHUẨN TIẾNG VIỆT & TIẾNG ANH (KHÔNG BAO GIỜ BỊ VỠ DẤU) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
 
 <style is:inline is:global>
   :root {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: var(--aw-font-sans);
-    --aw-font-heading: var(--aw-font-sans);
+    --aw-font-sans: 'Be Vietnam Pro', sans-serif;
+    --aw-font-serif: 'Playfair Display', serif;
+    --aw-font-heading: 'Playfair Display', serif;
 
-    /* Màu sắc thương hiệu Việt Nghi: Xanh ngọc bích & Nhũ vàng cổ */
-    --aw-color-primary: rgb(46 111 94);
-    --aw-color-secondary: rgb(212 175 55);
-    --aw-color-accent: rgb(180 83 9);
-
-    --aw-color-text-heading: rgb(17 24 39);
-    --aw-color-text-default: rgb(31 41 55);
-    --aw-color-text-muted: rgb(75 85 99);
-    --aw-color-bg-page: rgb(255 255 255);
-    --aw-color-bg-page-dark: rgb(18 18 18);
+    /* PALETTE KHỞI DUYÊN (LIGHT MODE): Trắng Thoải Phủ chủ đạo */
+    --aw-color-primary: #1B4D3E;       /* Xanh ngọc bích Nhạc Phủ */
+    --aw-color-secondary: #C84B31;     /* Đỏ san hô Thiên Phủ */
+    --aw-color-accent: #D4AF37;        /* Vàng kim Địa Phủ */
+    --aw-color-bg-page: #FAF8F5;       /* Trắng giấy dó thanh tịnh */
+    --aw-color-text-heading: #18231C;  /* Chữ đen đậm rõ nét */
+    --aw-color-text-default: #2C3E35;  /* Chữ nội dung sắc nét */
+    --aw-color-text-muted: #526B5E;    /* Chữ phụ */
   }
 
   .dark {
-    --aw-color-primary: rgb(59 122 87);
-    --aw-color-secondary: rgb(212 175 55);
-    --aw-color-text-heading: rgb(243 244 246);
-    --aw-color-text-default: rgb(229 231 235);
-    --aw-color-text-muted: rgb(156 163 175);
-    --aw-color-bg-page: rgb(18 18 18);
+    /* PALETTE KHỞI DUYÊN (DARK MODE): Đen trầm & Ngọc sáng */
+    --aw-color-primary: #3CB371;
+    --aw-color-secondary: #E05A47;
+    --aw-color-accent: #E5C158;
+    --aw-color-bg-page: #0F1412;
+    --aw-color-text-heading: #F5FAF7;
+    --aw-color-text-default: #D8E5DF;
+    --aw-color-text-muted: #8FA89D;
+  }
+
+  /* Ép buộc mọi tiêu đề dùng font Playfair chuẩn tiếng Việt */
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', serif !important;
   }
 </style>
-
-<script is:inline>
-  const THEMES = {
-    t1: {
-      btn: '☯ Tinh Hoa',
-      menu: ['Khởi Duyên', 'Tam Phẩm', 'Góc Kể Chuyện', 'Minh Bạch Giám Định'],
-      dropdown: ['Khăn Chầu Áo Ngự', 'Pháp Phục Thiền Tịnh', 'Ngọc Cẩm Thạch Loại A'],
-      cta: 'Thỉnh Duyên'
-    },
-    t2: {
-      btn: '☯ Cổ Phong',
-      menu: ['Diện Kiến', 'Tác Phẩm', 'Điển Tích & Ngọc Học', 'Chỉ Dẫn Đo Ni'],
-      dropdown: ['Y Phục Nghi Lễ', 'Trang Phục Thường Nhật', 'Ngọc Phỉ Thúy Loại A'],
-      cta: 'Trò Chuyện'
-    }
-  };
-
-  function updateNavbar(themeKey) {
-    localStorage.setItem('vietnghi_nav_theme', themeKey);
-    const data = THEMES[themeKey];
-    
-    const btn = document.getElementById('vn-theme-switcher');
-    if (btn) btn.innerText = data.btn;
-
-    const mainItems = document.querySelectorAll('header nav > ul > li > a, header nav > ul > li > button');
-    mainItems.forEach((el, index) => {
-      if (data.menu[index]) {
-        const svg = el.querySelector('svg');
-        el.childNodes[0].textContent = data.menu[index] + ' ';
-        if (svg && !el.contains(svg)) el.appendChild(svg);
-      }
-    });
-
-    const subItems = document.querySelectorAll('header nav ul ul li a');
-    subItems.forEach((el, index) => {
-      if (data.dropdown[index]) el.textContent = data.dropdown[index];
-    });
-
-    const ctaBtn = document.querySelector('header a.btn-primary, header .actions a');
-    if (ctaBtn) ctaBtn.textContent = data.cta;
-  }
-
-  function setupSwitcherButton() {
-    let currentTheme = localStorage.getItem('vietnghi_nav_theme') || 't1';
-    const darkToggle = document.querySelector('[data-aw-toggle-color-scheme]') || document.querySelector('header .actions');
-    
-    if (darkToggle && !document.getElementById('vn-theme-switcher')) {
-      const btn = document.createElement('button');
-      btn.id = 'vn-theme-switcher';
-      btn.type = 'button';
-      btn.className = 'text-xs px-2.5 py-1.5 rounded-full border border-gray-300 dark:border-gray-700 font-semibold mr-2 transition hover:bg-gray-100 dark:hover:bg-gray-800 text-emerald-800 dark:text-emerald-300';
-      btn.title = 'Bấm để đổi phong cách thanh Menu';
-      btn.onclick = () => {
-        currentTheme = currentTheme === 't1' ? 't2' : 't1';
-        updateNavbar(currentTheme);
-      };
-      darkToggle.parentNode.insertBefore(btn, darkToggle);
-    }
-
-    updateNavbar(currentTheme);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupSwitcherButton);
-  } else {
-    setupSwitcherButton();
-  }
-  document.addEventListener('astro:page-load', setupSwitcherButton);
-</script>
