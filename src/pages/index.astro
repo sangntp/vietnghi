@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -10,27 +9,43 @@ const metadata = {
   title: 'Việt Nghi — Chạm nét cổ truyền, tìm an yên giữa phố thị',
 };
 
-// 4 SẮC TỨ PHỦ CHUYỂN HÓA SANG NĂNG LƯỢNG SỐNG CHO NGƯỜI TRẺ
+// 4 SẮC THÁI NĂNG LƯỢNG KÈM HÌNH ẢNH MOODBOARD
+const bonSacNangC THÁI NĂNG LƯỢNG KÈM HÌNH ẢNH MOODBOARD
 const bonSacNangLuong = [
   {
-    title: 'Sắc Đỏ Thiên Phủ · Nhiệt Huyết & Khởi Sắc',
-    description: 'Năng lượng may mắn, vị thế và sự kiêu hãnh. Họa tiết phượng hoàng gấm thêu truyền cảm hứng tự tin, khởi sắc trong công việc và cuộc sống.',
-    icon: 'tabler:flame',
+    title: 'Sắc Đỏ Thiên Phủ',
+    sub: 'Nhiệt Huyết & Khởi Sắc',
+    description: 'Năng lượng may mắn, vị thế và lòng kiêu hãnh. Họa tiết phượng hoàng gấm thêu truyền cảm hứng tự tin, khởi sắc trong công việc.',
+    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80',
+    tag: 'May Mắn & Vị Thế',
+    color: 'text-red-700 dark:text-red-400',
   },
   {
-    title: 'Sắc Xanh Nhạc Phủ · Chữa Lành & An Nhiên',
-    description: 'Sinh khí từ ngàn thông hoa cỏ. Sắc xanh ngọc bích mang lại cảm giác dịu mát tâm trí, giúp người trẻ tìm lại sự cân bằng giữa phố thị ồn ã.',
-    icon: 'tabler:leaf',
+    title: 'Sắc Xanh Nhạc Phủ',
+    sub: 'Chữa Lành & An Nhiên',
+    description: 'Sinh khí từ ngàn thông hoa cỏ. Sắc xanh ngọc mang lại cảm giác dịu mát tâm trí, giúp tìm lại sự cân bằng giữa phố thị ồn ã.',
+    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80',
+    tag:?auto=format&fit=crop&w=600&q=80',
+    tag: 'Chữa Lành & Bình An',
+    color: 'text-emerald-700 dark:text-emerald-400',
   },
   {
-    title: 'Sắc Trắng Thoải Phủ · Thanh Khiết & Tối Giản',
-    description: 'Lấy cảm hứng từ dòng nước nguồn trong trẻo và ngọc trai tinh khôi. Phong cách tối giản (Minimalism) gột rửa âu lo, nuôi dưỡng tâm sáng.',
-    icon: 'tabler:droplet',
+    title: 'Sắc Trắng Thoải Phủ',
+    sub: 'Thanh Khiết & Tối Giản',
+    description: 'Lấy cảm hứng từ dòng nước nguồn trong trẻo và ngọc trai tinh khôi. Phong cách tối giản gột rửa âu lo, nuôi dưỡng tâm sáng.',
+    image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80',
+    tag: 'Thanh Tịnh & Khai Sáng',
+    color: 'text-cyan-700 dark:text-cyan-300',
   },
   {
-    title: 'Sắc Vàng Địa Phủ · Ấm Áp & Vững Vàng',
-    description: 'Hương sen vàng và sắc lúa trĩu hạt của đất mẹ. Tượng trưng cho sự bền bỉ, chở che và nền tảng nội tâm vững chãi trước sóng gió.',
-    icon: 'tabler:sun',
+    title: 'Sắc Vàng Địa Phủ',
+    sub: 'Ấm Áp &{
+    title: 'Sắc Vàng Địa Phủ',
+    sub: 'Ấm Áp & Vững Vàng',
+    description: 'Hương sen vàng và sắc lúa trĩu hạt của đất mẹ. Tượng trưng cho sự bền bỉ, chở che và nền tảng nội tâm vững chãi.',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80',
+    tag: 'Vững Chãi & Trù Phú',
+    color: 'text-amber-700 dark:text-amber-400',
   },
 ];
 ---
@@ -50,6 +65,10 @@ const bonSacNangLuong = [
 
   <!-- 1. HERO -->
   <div id="ve-viet-nghi">
+    <
+
+  <!-- 1. HERO -->
+  <div id="ve-viet-nghi">
     <Hero
       actions={[
         { variant: 'primary', text: 'Nhận Tư Vấn Chọn Ni Tay', href: 'https://zalo.me', target: '_blank', icon: 'tabler:message-circle' },
@@ -66,43 +85,45 @@ const bonSacNangLuong = [
     </Hero>
   </div>
 
-  <!-- 2. BỘ SƯU TẬP 4 SẮC THÁI NĂNG LƯỢNG (CHUYỂN HÓA TỪ TỨ PHỦ) -->
-  <div id="tam-pham" class="py-12 bg-stone-100/60 dark:bg-stone-900/40">
-    <Features
-      tagline="HƯƠNG THIÊN SẮC NƯỚC"
-      title="Bản Hòa Ca Năng Lượng Đất Trời"
-      subtitle="Kế thừa tinh hoa màu sắc từ văn hóa dân gian Việt Nam, biến 4 sắc thái đất trời thành điểm tựa tinh thần cho người trẻ."
-      items={bonSacNangLuong}
-    />
+  <!-- 2. BỘ SƯU TẬP 4 SẮC THÁI NĂNG LƯỢNG CÓ HÌNH ẢNH ĐẦY ĐỦ -->
+  <div id="tam-pham" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <span class="text-emerald-700 dark:text-emerald-400 text-xs font-semibold uppercase tracking-widest">Hương Thiên Sắc Nước</span>
+      <h2 class="text-3xl font-serif font-bold text-stone-900 dark:text-white mt-1">Bản Hòa Ca Năng Lượng Đất Trời</h2>
+      <p class="text-stone-600 dark:text-stone-300 text-sm mt-2 max-w-2xl mx-auto">
+        Kế thừa 4 sắc màu Tứ Phủ từ di sản văn hóa bản địa, biến vẻ đẹp ngàn năm thành nguồn năng lượng tích cực cho nhịp sống hiện đại.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {bonSacNangLuong.map((item) => (
+        <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden shadow-lg border border-stone-200 dark:border-stone-800 flex flex-col justify-between hover:shadow-xl transition-all">
+          <div class="relative h-48 w-full overflow-hidden bg-stone-100">
+            <img src={item.image} alt={item.title} class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-2.5 left-2.5 text-[10px] font-semibold bg-white/90 dark:bg-black/80 px-2 py-0.5 rounded-full text-stone-800 dark:text-stone-200 backdrop-blur-sm">
+              {item.tag}
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class={`font-serif font-bold text-lg ${item.color} mb-0.5`}>{item.title}</h3>
+              <p class="text-xs font-medium text-stone-500 dark:text-stone-400 mb-2 italic">{item.sub}</p>
+              <p class="text-xs text-stone-600 dark mb-2 italic">{item.sub}</p>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">{item.description}</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-stone-100 dark:border-stone-800">
+              <a href="https://zalo.me" target="_blank" class="text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:underline">
+                Khám phá năng lượng →
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 
-  <!-- 3. TAM PHẨM ỨNG DỤNG ĐỜI THƯỜNG -->
-  <div class="py-12">
-    <Features
-      tagline="TAM PHẨM TINH HOA"
-      title="Nét Đẹp Nâng Niu Thân Tâm"
-      items={[
-        {
-          title: 'Vòng Ngọc Cẩm Thạch A',
-          description: '100% ngọc tự nhiên không nhuộm hóa chất. "Ngọc dưỡng người ba năm, người dưỡng ngọc một đời" — chiếc bùa hộ mệnh an lành nơi cổ tay.',
-          icon: 'tabler:sparkles',
-        },
-        {
-          title: 'Pháp Phục & Đũi Tơ Thường Nhật',
-          description: 'Dệt từ sợi đũi, sợi lanh mộc mạc, thấm hút tự nhiên. Thiết kế tối giản, thanh lịch khi tĩnh tọa, thưởng trà hay dạo phố cuối tuần.',
-          icon: 'tabler:shirt',
-        },
-        {
-          title: 'Di Sản Làng Nghề & Thiết Kế Số',
-          description: 'Hơi thở thêu tay Đông Cứu hòa nhịp cùng phác thảo kỹ thuật số, đưa mỹ thuật cổ truyền bước vào không gian sống đương đại.',
-          icon: 'tabler:device-tablet',
-        },
-      ]}
-    />
-  </div>
-
-  <!-- 4. HƯỚNG DẪN ĐO NI TAY 30 GIÂY -->
-  <div id="do-ni-tay" class="py-10 bg-stone-100/50 dark:bg-stone-900/30">
+  <!-- 3. HƯỚNG DẪN ĐO NI TAY 30 GIÂY -->
+  <div id="do-ni-tay" class="py-12 bg-stone-100/60 dark:bg-stone-900/40">
     <Steps
       title="30 giây để tìm chiếc vòng ngọc vừa vặn"
       items={[
@@ -113,12 +134,17 @@ const bonSacNangLuong = [
     />
   </div>
 
-  <!-- 5. GÓC KỂ CHUYỆN -->
+  <!-- 4. GÓC KỂ CHmessage' },
+      ]}
+    />
+  </div>
+
+  <!-- 4. GÓC KỂ CHUYỆN -->
   <div id="goc-ke-chuyen">
     <BlogLatestPosts title="Góc Tĩnh Lặng & Kể Chuyện" information="Những mẩu chuyện nhỏ về triết lý ngọc dưỡng người và nét đẹp tiền nhân." />
   </div>
 
-  <!-- 6. KẾT DUYÊN -->
+  <!-- 5. KẾT DUYÊN -->
   <CallToAction actions={[{ variant: 'primary', text: 'Trò Chuyện Hữu Duyên', href: 'https://zalo.me', target: '_blank', icon: 'tabler:message-dots' }]}>
     <Fragment slot="title"><span class="font-serif">Mỗi cơ duyên tao ngộ đều là một điều lành</span></Fragment>
     <Fragment slot="subtitle">Nhắn tin cho Việt Nghi nếu bạn cần một người bạn đồng hành chia sẻ về ngọc, về trang phục mộc và lối sống an yên.</Fragment>
