@@ -8,14 +8,14 @@ const metadata = {
   description: 'Khăn chầu áo ngự chuẩn mực Đạo Mẫu và Ngọc cẩm thạch tự nhiên loại A.',
 };
 
-// DỮ LIỆU BỘ SƯU TẬP TỨ PHỦ KẾ THỪA TỪ LÀNG NGHỀ ĐÔNG CỨU
-const tuPhuCollections = [
+// 4 BỘ SƯU TẬP TỨ PHỦ CHUẨN ĐIỂN TÍCH VÀ QUY THỨC NGHI LỄ
+const boSuuTapTuPhu = [
   {
     phu: 'THIÊN PHỦ · SẮC ĐỎ CHU SA',
     title: 'Ngọc Ánh Thiên Hương — Vần Kim Rực Sắc Gấm',
-    description: 'Bảo trợ cho Quyền Uy và Vị Thế tối thượng của Mẫu Thượng Thiên. Dành cho hàng Quan Lớn, Chầu Bà Đệ Nhất.',
-    detail: 'Chất liệu lụa gấm đỏ đại hoa dệt chìm, chỉ tơ vàng kim tuyến gia công mũi thêu kim sa, đính kết đá ruby đỏ và họa tiết phượng hoàng triều mẫu.',
-    tag: 'Bảo Trợ Vị Thế & Quyền Lực',
+    description: 'Bảo trợ cho Quyền Uy và Vị Thế tối thượng của Mẫu Thượng Thiên. Chuẩn mực phụng sự giá Quan Lớn Đệ Nhất, Chầu Đệ Nhất.',
+    detail: 'Gấm đỏ đại hoa dệt chìm, chỉ tơ kim tuyến gia công mũi thêu kim sa, đính kết đá ruby đỏ và họa tiết phượng hoàng triều mẫu.',
+    tag: 'Bảo Trợ Quyền Lực & Vị Thế',
     borderColor: 'border-red-500/40',
     accentBg: 'bg-red-950/60',
     titleColor: 'text-red-300',
@@ -23,9 +23,9 @@ const tuPhuCollections = [
   {
     phu: 'NHẠC PHỦ · SẮC XANH NGỌC BÍCH',
     title: 'Mộc Tâm Sinh Khí — Ngọc Cốt Dưỡng Nhan',
-    description: 'Bảo trợ cho sự Chữa Lành, Sinh Khí và An Nhiên của Mẫu Thượng Ngàn. Mang trường năng lượng thuần khiết của rừng thiêng.',
-    detail: 'Lụa gấm xanh ngọc trầm phối chỉ kim tuyến vàng ròng, đính ngọc cẩm thạch tự nhiên, hoa văn cúc đại đóa, vân mây và cây cổ thụ ngàn năm.',
-    tag: 'Dưỡng Tâm & Chữa Lành',
+    description: 'Bảo trợ cho Sinh Khí, Sự Chữa Lành và An Nhiên của Mẫu Thượng Ngàn. Tôn nghiêm nơi đền rừng linh từ phủ Nhạc.',
+    detail: 'Lụa gấm xanh ngọc phối chỉ kim tuyến vàng ròng, đính cẩm thạch tự nhiên, hoa văn cúc đại đóa, vân mây và cổ thụ ngàn năm.',
+    tag: 'Sinh Khí & An Nhiên',
     borderColor: 'border-emerald-600/40',
     accentBg: 'bg-emerald-950/40',
     titleColor: 'text-emerald-300',
@@ -33,9 +33,9 @@ const tuPhuCollections = [
   {
     phu: 'THOẢI PHỦ · SẮC TRẮNG XÀ CỪ',
     title: 'Lưu Quang Thoải Ảnh — Đượm Sắc Thư Dung',
-    description: 'Bảo trợ cho Trí Tuệ, Sự Tinh Tế và Thanh Bạch của Mẫu Đệ Tam Thoải Cung. Dòng nước nguồn gột rửa muộn phiền.',
+    description: 'Bảo trợ cho Trí Tuệ, Sự Tinh Tế và Thanh Bạch của Mẫu Thoải Cung. Dòng nước nguồn gột rửa trần tâm.',
     detail: 'Lụa bạch tơ tằm thanh khiết kết hợp sa hạt bạc lấp lánh, đính ngọc trai tự nhiên và đá lam ngọc, thêu lượn sóng thủy ba và đóa sen trắng giấu chỉ.',
-    tag: 'Thanh Khiết & Khai Sáng',
+    tag: 'Thanh Khiết & Trí Tuệ',
     borderColor: 'border-cyan-500/40',
     accentBg: 'bg-cyan-950/40',
     titleColor: 'text-cyan-200',
@@ -43,7 +43,7 @@ const tuPhuCollections = [
   {
     phu: 'ĐỊA PHỦ · SẮC VÀNG HOÀNG KIM',
     title: 'Hồng Liên Minh Châu — Bạch Ngọc Hoàng Kim',
-    description: 'Bảo trợ cho Sự Vững Chãi, Hưng Thịnh và Tài Lộc của Mẫu Địa. Nền tảng đất mẹ chở che vạn vật tốt tươi.',
+    description: 'Bảo trợ cho Sự Vững Chãi, Hưng Thịnh và Tài Lộc của Mẫu Địa. Nền tảng chở che cho việc họ việc làng bền vững.',
     detail: 'Gấm vàng hoàng triều dày dặn đứng phom, thêu tay chỉ tơ vàng óng ánh, điểm xuyết hổ phách thiên nhiên cùng họa tiết hoa sen vàng và bông lúa trĩu hạt.',
     tag: 'Hưng Thịnh & Vững Chãi',
     borderColor: 'border-amber-500/40',
@@ -57,7 +57,7 @@ const tuPhuCollections = [
   <!-- NỀN ĐỎ GẤM THIÊN PHỦ CHUẨN CUNG ĐÌNH -->
   <div class="bg-[#1C0303] text-[#F7EFE9] min-h-screen">
     
-    <!-- THANH CHUYỂN KHÔNG GIAN DẠNG PILL SANG TRỌNG -->
+    <!-- THANH TRƯỢT CHUYỂN KHÔNG GIAN DẠNG PILL SANG TRỌNG -->
     <div class="sticky top-0 z-30 flex justify-center py-2.5 bg-[#140202]/95 backdrop-blur-md border-b border-[#D4AF37]/30">
       <div class="inline-flex p-1 bg-[#2E0404] rounded-full border border-[#D4AF37]/40 shadow-lg">
         <a href="/" class="px-4 py-1 rounded-full text-xs font-medium text-stone-300 hover:text-white transition-all">
@@ -97,7 +97,7 @@ const tuPhuCollections = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {tuPhuCollections.map((item) => (
+        {boSuuTapTuPhu.map((item) => (
           <div class={`rounded-2xl p-6 border ${item.borderColor} ${item.accentBg} backdrop-blur-sm shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300`}>
             <div>
               <div class="flex justify-between items-center mb-3">
@@ -111,7 +111,7 @@ const tuPhuCollections = [
               </div>
             </div>
             <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
-              <span class="text-xs text-stone-400 font-serif italic">Thêu tay độc bản</span>
+              <span class="text-xs text-stone-400 font-serif italic">Thêu tay độc bản Đông Cứu</span>
               <a href="https://zalo.me" target="_blank" class="text-xs text-[#D4AF37] hover:underline font-semibold flex items-center gap-1">
                 Tư vấn may đo →
               </a>
