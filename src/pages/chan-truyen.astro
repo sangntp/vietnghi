@@ -5,47 +5,55 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Việt Nghi — Chân Truyền Lề Lối & Sắc Phục Tứ Phủ',
-  description: 'Khăn chầu áo ngự chuẩn mực Đạo Mẫu và Ngọc cẩm thạch tự nhiên loại A.',
 };
 
-// 4 BỘ SƯU TẬP TỨ PHỦ CHUẨN ĐIỂN TÍCH VÀ QUY THỨC NGHI LỄ
+// DỮ LIỆU TỨ PHỦ ĐẦY ĐỦ HÌNH ẢNH & CHI TIẾT LÀNG NGHỀ ĐÔNG CỨU
+ ĐẦY ĐỦ HÌNH ẢNH & CHI TIẾT LÀNG NGHỀ ĐÔNG CỨU
 const boSuuTapTuPhu = [
   {
     phu: 'THIÊN PHỦ · SẮC ĐỎ CHU SA',
-    title: 'Ngọc Ánh Thiên Hương — Vần Kim Rực Sắc Gấm',
-    description: 'Bảo trợ cho Quyền Uy và Vị Thế tối thượng của Mẫu Thượng Thiên. Chuẩn mực phụng sự giá Quan Lớn Đệ Nhất, Chầu Đệ Nhất.',
-    detail: 'Gấm đỏ đại hoa dệt chìm, chỉ tơ kim tuyến gia công mũi thêu kim sa, đính kết đá ruby đỏ và họa tiết phượng hoàng triều mẫu.',
-    tag: 'Bảo Trợ Quyền Lực & Vị Thế',
+    title: 'Ngọc Ánh Thiên Hương',
+    sub: 'Vần Kim Rực Sắc Gấm',
+    description: 'Bảo trợ cho Quyền Uy và Vị Thế tối thượng của Mẫu Thượng Thiên. Dành cho hàng Quan Lớn, Chầu Bà Đệ Nhất.',
+    detail: 'Lụa gấm đỏ dệt chìm, chỉ tơ vàng kim tuyến gia công mũi thêu kim sa, đính kết đá ruby đỏ và họa tiết phượng hoàng triều mẫu.',
+    // Ảnh mẫu trang phục sắc đỏ (thay bằng ảnh thực tế trong public/images/ hoặc link ảnh của Thầy)
+    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
     borderColor: 'border-red-500/40',
     accentBg: 'bg-red-950/60',
     titleColor: 'text-red-300',
   },
   {
     phu: 'NHẠC PHỦ · SẮC XANH NGỌC BÍCH',
-    title: 'Mộc Tâm Sinh Khí — Ngọc Cốt Dưỡng Nhan',
-    description: 'Bảo trợ cho Sinh Khí, Sự Chữa Lành và An Nhiên của Mẫu Thượng Ngàn. Tôn nghiêm nơi đền rừng linh từ phủ Nhạc.',
+    title: 'Mộc Tâm Sinh Khí',
+    sub: 'Ngọc Cốt Dưỡng Nhan',
+    description: 'Bảo trợ cho Sinh Khí, Sự Chữa Lành và An Nhiên của Mẫu Thượng Ngàn. Mang sinh khí bất tận của rừng thiêng.',
     detail: 'Lụa gấm xanh ngọc phối chỉ kim tuyến vàng ròng, đính cẩm thạch tự nhiên, hoa văn cúc đại đóa, vân mây và cổ thụ ngàn năm.',
-    tag: 'Sinh Khí & An Nhiên',
+    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&614-a3fb3927b675?auto=format&fit=crop&w=800&q=80',
     borderColor: 'border-emerald-600/40',
     accentBg: 'bg-emerald-950/40',
     titleColor: 'text-emerald-300',
   },
   {
     phu: 'THOẢI PHỦ · SẮC TRẮNG XÀ CỪ',
-    title: 'Lưu Quang Thoải Ảnh — Đượm Sắc Thư Dung',
-    description: 'Bảo trợ cho Trí Tuệ, Sự Tinh Tế và Thanh Bạch của Mẫu Thoải Cung. Dòng nước nguồn gột rửa trần tâm.',
+    title: 'Lưu Quang Thoải Ảnh',
+    sub: 'ẮNG XÀ CỪ',
+    title: 'Lưu Quang Thoải Ảnh',
+    sub: 'Đượm Sắc Thư Dung',
+    description: 'Bảo trợ cho Trí Tuệ, Sự Tinh Tế và Thanh Bạch của Mẫu Đệ Tam Thoải Cung. Dòng nước nguồn gột rửa trần tâm.',
     detail: 'Lụa bạch tơ tằm thanh khiết kết hợp sa hạt bạc lấp lánh, đính ngọc trai tự nhiên và đá lam ngọc, thêu lượn sóng thủy ba và đóa sen trắng giấu chỉ.',
-    tag: 'Thanh Khiết & Trí Tuệ',
+    image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80',
     borderColor: 'border-cyan-500/40',
     accentBg: 'bg-cyan-950/40',
     titleColor: 'text-cyan-200',
   },
   {
     phu: 'ĐỊA PHỦ · SẮC VÀNG HOÀNG KIM',
-    title: 'Hồng Liên Minh Châu — Bạch Ngọc Hoàng Kim',
+    title: 'Hồng Liên Minh Châu',
+    sub: 'Bạch Ngọc Hoàng Kim',
     description: 'Bảo trợ cho Sự Vững Chãi, Hưng Thịnh và Tài Lộc của Mẫu Địa. Nền tảng chở che cho việc họ việc làng bền vững.',
+    detail: 'Gấm vàng hoàng triều dày dặn đứng phom, thêu tay chỉ việc họ việc làng bền vững.',
     detail: 'Gấm vàng hoàng triều dày dặn đứng phom, thêu tay chỉ tơ vàng óng ánh, điểm xuyết hổ phách thiên nhiên cùng họa tiết hoa sen vàng và bông lúa trĩu hạt.',
-    tag: 'Hưng Thịnh & Vững Chãi',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
     borderColor: 'border-amber-500/40',
     accentBg: 'bg-amber-950/40',
     titleColor: 'text-amber-300',
@@ -54,12 +62,12 @@ const boSuuTapTuPhu = [
 ---
 
 <Layout metadata={metadata}>
-  <!-- NỀN ĐỎ GẤM THIÊN PHỦ CHUẨN CUNG ĐÌNH -->
   <div class="bg-[#1C0303] text-[#F7EFE9] min-h-screen">
     
     <!-- THANH TRƯỢT CHUYỂN KHÔNG GIAN DẠNG PILL SANG TRỌNG -->
     <div class="sticky top-0 z-30 flex justify-center py-2.5 bg-[#140202]/95 backdrop-blur-md border-b border-[#D4AF37]/30">
       <div class="inline-flex p-1 bg-[#2E0404] rounded-full border border-[#D4AF37]/40 shadow-lg">
+        <a href="/" class="px-4 py-1 rounded-full text-xs font-medium shadow-lg">
         <a href="/" class="px-4 py-1 rounded-full text-xs font-medium text-stone-300 hover:text-white transition-all">
           🌿 Khởi Duyên (Người Trẻ)
         </a>
@@ -78,6 +86,7 @@ const boSuuTapTuPhu = [
       <Fragment slot="title">
         <span class="text-[#D4AF37] font-serif tracking-widest text-sm uppercase block mb-2">Hồn Thiêng Nước Việt · Di Sản Đông Cứu</span>
         <span class="text-stone-100 font-serif text-3xl sm:text-5xl leading-tight">Gửi Nét Chỉ Hoa <br /> Họa Hồn Phượng Gấm</span>
+xl leading-tight">Gửi Nét Chỉ Hoa <br /> Họa Hồn Phượng Gấm</span>
       </Fragment>
       <Fragment slot="subtitle">
         <span class="text-stone-200 text-base leading-relaxed">
@@ -86,7 +95,7 @@ const boSuuTapTuPhu = [
       </Fragment>
     </Hero>
 
-    <!-- 2. BỘ SƯU TẬP TỨ PHỦ: HƯƠNG THIÊN SẮC NƯỚC (BỐ CỤC MOODBOARD CAO CẤP) -->
+    <!-- 2. BỘ SƯU TẬP 4 SẮC TỨ PHỦ CÓ ĐẦY ĐỦ HÌNH ẢNH MOODBOARD -->
     <div id="tam-pham" class="max-w-6xl mx-auto px-4 py-12">
       <div class="text-center mb-12">
         <span class="text-[#D4AF37] text-xs font-serif uppercase tracking-widest border-b border-[#D4AF37]/40 pb-1">Bộ Sưu Tập Chủ Đạo</span>
@@ -96,23 +105,43 @@ const boSuuTapTuPhu = [
         </p>
       </div>
 
+      <!--ân thủ nghiêm ngặt điển tích và màu sắc bản mệnh.
+        </p>
+      </div>
+
+      <!-- LƯỚI CARD CÓ HÌNH ẢNH SẢN PHẨM LỚN SẮC NÉT -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {boSuuTapTuPhu.map((item) => (
-          <div class={`rounded-2xl p-6 border ${item.borderColor} ${item.accentBg} backdrop-blur-sm shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300`}>
-            <div>
-              <div class="flex justify-between items-center mb-3">
-                <span class="text-xs font-serif tracking-wider text-[#D4AF37] uppercase">{item.phu}</span>
-                <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-white/10 text-stone-200 border border-white/20">{item.tag}</span>
-              </div>
-              <h3 class={`text-xl font-serif font-bold ${item.titleColor} mb-2 leading-snug`}>{item.title}</h3>
+          <div class={`rounded-2xl overflow-hidden border ${item.borderColor} ${item.accentBg} backdrop-blur-sm shadow-2xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300`}>
+            
+            <!-- KHUNG HÌNH ẢNH TỶ LỆ VÀNG -->
+            <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-black/40">
+              <img
+                src={item.image}
+                alt={item.title}
+                class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500 opacity-90"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#1C0303] via-transparent to-black/20" />
+              <span class="absolute top-3 left-3 text-[11px] font-serif uppercase tracking-wider text-amber-200 bg-black/60 px-2.5 py-1 rounded border border-amber-300/30 backdrop-blur-sm">
+                {.5 py-1 rounded border border-amber-300/30 backdrop-blur-sm">
+                {item.phu}
+              </span>
+            </div>
+
+            <!-- NỘI DUNG MÔ TẢ ĐÍNH KÈM -->
+            <div class="p-6">
+              <h3 class={`text-2xl font-serif font-bold ${item.titleColor} mb-1 leading-snug`}>{item.title}</h3>
+              <p class="text-[#D4AF37] font-serif italic text-xs mb-3">{item.sub}</p>
               <p class="text-stone-200 text-sm mb-4 leading-relaxed">{item.description}</p>
-              <div class="text-xs text-stone-300/90 bg-black/30 p-3.5 rounded-xl border border-white/10 leading-relaxed">
+              <div class="text-xs text-stone-300/90 bg-black/40 p-3.5 rounded-xl border border-white/10 leading-relaxed">
                 <span class="text-[#D4AF37] font-semibold">Quy chuẩn chất liệu:</span> {item.detail}
               </div>
             </div>
-            <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+
+            <div class="px-6 pb-6 pt-2 flex justify-between items-center border-t border-white/10">
               <span class="text-xs text-stone-400 font-serif italic">Thêu tay độc bản Đông Cứu</span>
               <a href="https://zalo.me" target="_blank" class="text-xs text-[#D4AF37] hover:underline font-semibold flex items-center gap-1">
+                T-[#D4AF37] hover:underline font-semibold flex items-center gap-1">
                 Tư vấn may đo →
               </a>
             </div>
@@ -127,23 +156,26 @@ const boSuuTapTuPhu = [
         <span class="text-[#D4AF37] text-xs font-serif uppercase tracking-widest">Triết Lý Ngọc Dưỡng Người</span>
         <h2 class="text-3xl font-serif text-white mt-2 mb-4">100% Cẩm Thạch Phỉ Thúy Tự Nhiên Loại A</h2>
         <p class="text-stone-300 text-sm max-w-2xl mx-auto mb-10 leading-relaxed">
-          Việt Nghi tuyệt đối không kinh doanh ngọc tẩm hóa chất hay nhuộm màu. Minh bạch kết quả quang phổ hồng ngoại FTIR từ các viện ngọc học uy tín (PNJ Lab, RGG, SJC).
+          Việt Nghi tuyệt đối không kinh doanh ngọc tẩm hóa chất hay nhuộm màu. Minh bạch kết quả quang phổ hồng ngoại FTIR từ các viện ngọc học uy tín.
         </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           <div class="p-5 rounded-xl bg-[#260404] border border-[#D4AF37]/30">
             <span class="text-2xl text-[#D4AF37] block mb-2">📜</span>
             <h4 class="font-serif text-[#D4AF37] font-bold text-base mb-1">Chứng Thư Độc Lập</h4>
-            <p class="text-xs text-stone-300 leading-relaxed">Mỗi chiếc vòng ngọc đều có chứng thư giám định riêng biệt, minh bạch thông số tỷ trọng và độ khúc xạ.</p>
+            <p class="text-xs text-stone-300 leading-relaxed">Mỗi chiếc vòng ngọc đều có mã số giám định riêng biệt, kiểm định quang phổ hồng ngoại FTIR.</p>
           </div>
           <div class="p-5 rounded-xl bg-[#260404] border border-[#D4AF37]/30">
             <span class="text-2xl text-[#D4AF37] block mb-2">✨</span>
             <h4 class="font-serif text-[#D4AF37] font-bold text-base mb-1">Nước Ngọc Lên Nước</h4>
-            <p class="text-xs text-stone-300 leading-relaxed">Ngọc cẩm thạch tự nhiên càng đeo càng sáng bóng, thớ ngọc mướt mịn theo thời gian tiếp xúc với cơ thể.</p>
+            <p class="text-xs text-stone-300 leading-relaxed">Ngọc cẩm thạch tự nhiên càng đeo càng sáng bóng, thớ ngọc mướt mịn theo thời gian tiếp xúc cơ thể.</p>
           </div>
           <div class="p-5 rounded-xl bg-[#260404] border border-[#D4AF37]/30">
             <span class="text-2xl text-[#D4AF37] block mb-2">🌿</span>
             <h4 class="font-serif text-[#D4AF37] font-bold text-base mb-1">Sinh Khí Thuần Dương</h4>
+            <p class="text-xs text-stonebase mb-1">Sinh Khí Thuần Dương</h4>
             <p class="text-xs text-stone-300 leading-relaxed">Giữ trọn vẹn từ trường tinh khiết của lòng đất hàng triệu năm, hỗ trợ an định tâm trí và điều hòa năng lượng.</p>
           </div>
         </div>
@@ -153,6 +185,7 @@ const boSuuTapTuPhu = [
     <!-- 4. LỜI MỜI HỮU DUYÊN -->
     <CallToAction
       actions={[
+        { variant: 'primary', text: 'Nhắn Tin Tư Vấn Trực Tiếp', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[
         { variant: 'primary', text: 'Nhắn Tin Tư Vấn Trực Tiếp', href: 'https://zalo.me', target: '_blank', class: 'bg-[#D4AF37] text-[#1C0303] font-bold hover:bg-[#C5A059] border-none shadow-xl' },
       ]}
     >
