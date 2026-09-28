@@ -2,15 +2,12 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Việt Nghi — Chạm nét cổ truyền, tìm an yên giữa phố thị',
 };
 
-// 4 SẮC THÁI NĂNG LƯỢNG KÈM HÌNH ẢNH MOODBOARD
-const bonSacNangC THÁI NĂNG LƯỢNG KÈM HÌNH ẢNH MOODBOARD
 const bonSacNangLuong = [
   {
     title: 'Sắc Đỏ Thiên Phủ',
@@ -25,7 +22,6 @@ const bonSacNangLuong = [
     sub: 'Chữa Lành & An Nhiên',
     description: 'Sinh khí từ ngàn thông hoa cỏ. Sắc xanh ngọc mang lại cảm giác dịu mát tâm trí, giúp tìm lại sự cân bằng giữa phố thị ồn ã.',
     image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80',
-    tag:?auto=format&fit=crop&w=600&q=80',
     tag: 'Chữa Lành & Bình An',
     color: 'text-emerald-700 dark:text-emerald-400',
   },
@@ -38,8 +34,6 @@ const bonSacNangLuong = [
     color: 'text-cyan-700 dark:text-cyan-300',
   },
   {
-    title: 'Sắc Vàng Địa Phủ',
-    sub: 'Ấm Áp &{
     title: 'Sắc Vàng Địa Phủ',
     sub: 'Ấm Áp & Vững Vàng',
     description: 'Hương sen vàng và sắc lúa trĩu hạt của đất mẹ. Tượng trưng cho sự bền bỉ, chở che và nền tảng nội tâm vững chãi.',
@@ -62,10 +56,6 @@ const bonSacNangLuong = [
       </a>
     </div>
   </div>
-
-  <!-- 1. HERO -->
-  <div id="ve-viet-nghi">
-    <
 
   <!-- 1. HERO -->
   <div id="ve-viet-nghi">
@@ -108,7 +98,6 @@ const bonSacNangLuong = [
             <div>
               <h3 class={`font-serif font-bold text-lg ${item.color} mb-0.5`}>{item.title}</h3>
               <p class="text-xs font-medium text-stone-500 dark:text-stone-400 mb-2 italic">{item.sub}</p>
-              <p class="text-xs text-stone-600 dark mb-2 italic">{item.sub}</p>
               <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">{item.description}</p>
             </div>
             <div class="mt-4 pt-3 border-t border-stone-100 dark:border-stone-800">
@@ -134,17 +123,7 @@ const bonSacNangLuong = [
     />
   </div>
 
-  <!-- 4. GÓC KỂ CHmessage' },
-      ]}
-    />
-  </div>
-
-  <!-- 4. GÓC KỂ CHUYỆN -->
-  <div id="goc-ke-chuyen">
-    <BlogLatestPosts title="Góc Tĩnh Lặng & Kể Chuyện" information="Những mẩu chuyện nhỏ về triết lý ngọc dưỡng người và nét đẹp tiền nhân." />
-  </div>
-
-  <!-- 5. KẾT DUYÊN -->
+  <!-- 4. KẾT DUYÊN -->
   <CallToAction actions={[{ variant: 'primary', text: 'Trò Chuyện Hữu Duyên', href: 'https://zalo.me', target: '_blank', icon: 'tabler:message-dots' }]}>
     <Fragment slot="title"><span class="font-serif">Mỗi cơ duyên tao ngộ đều là một điều lành</span></Fragment>
     <Fragment slot="subtitle">Nhắn tin cho Việt Nghi nếu bạn cần một người bạn đồng hành chia sẻ về ngọc, về trang phục mộc và lối sống an yên.</Fragment>
